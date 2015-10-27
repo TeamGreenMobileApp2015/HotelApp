@@ -43,6 +43,7 @@
                                 <state key="normal" backgroundImage="rooms-icon.png"/>
                                 <connections>
                                     <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="XcS-X6-axL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
@@ -54,6 +55,7 @@
                                 <state key="normal" backgroundImage="lobby-icon.png"/>
                                 <connections>
                                     <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="MGI-VF-K0q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
@@ -66,6 +68,7 @@
                                 <state key="normal" backgroundImage="housekeeping-icon.png"/>
                                 <connections>
                                     <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="jqC-RB-UCJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
@@ -77,6 +80,7 @@
                                 <state key="normal" backgroundImage="maintenance-icon.png"/>
                                 <connections>
                                     <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="6Qv-oW-v01"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
@@ -88,6 +92,7 @@
                                 <state key="normal" backgroundImage="add-dept-icon.png"/>
                                 <connections>
                                     <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
@@ -100,6 +105,7 @@
                                 <state key="normal" backgroundImage="dining-icon.png"/>
                                 <connections>
                                     <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" id="kpP-yf-WQf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,6 +140,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="217" y="243"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h5z-l1-uo7">
+            <objects>
+                <viewController id="hOJ-ty-3fb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SA1-Yj-U73"/>
+                        <viewControllerLayoutGuide type="bottom" id="BPJ-9F-con"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mJ9-ey-iEw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-5K-L3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="243"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ohT-zB-eMN">
@@ -195,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wt-FG-NKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="1178"/>
+            <point key="canvasLocation" x="217" y="1074"/>
         </scene>
     </scenes>
     <resources>
@@ -207,6 +232,7 @@
         <image name="rooms-icon.png" width="36" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hoU-35-wXH"/>
+        <segue reference="Rgm-EW-b44"/>
+        <segue reference="kpP-yf-WQf"/>
     </inferredMetricsTieBreakers>
 </document>
