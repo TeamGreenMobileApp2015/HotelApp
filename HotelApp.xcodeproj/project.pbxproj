@@ -21,6 +21,7 @@
 		947AF77C1BDEFF4A008CADB4 /* lobby-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7761BDEFF4A008CADB4 /* lobby-icon.png */; };
 		947AF77D1BDEFF4A008CADB4 /* maintenance-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7771BDEFF4A008CADB4 /* maintenance-icon.png */; };
 		947AF77E1BDEFF4A008CADB4 /* rooms-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7781BDEFF4A008CADB4 /* rooms-icon.png */; };
+		F1F9100D1BDFD39500B4814A /* IconActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9100C1BDFD39500B4814A /* IconActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		947AF7771BDEFF4A008CADB4 /* maintenance-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maintenance-icon.png"; path = "icons/maintenance-icon.png"; sourceTree = "<group>"; };
 		947AF7781BDEFF4A008CADB4 /* rooms-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rooms-icon.png"; path = "icons/rooms-icon.png"; sourceTree = "<group>"; };
 		DFD359000926D860476055E6 /* Pods-HotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.release.xcconfig"; sourceTree = "<group>"; };
+		F1F9100C1BDFD39500B4814A /* IconActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				947AF7721BDEFF34008CADB4 /* icons */,
 				947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */,
 				947AF75C1BDEE33A008CADB4 /* ViewController.swift */,
+				F1F9100C1BDFD39500B4814A /* IconActionViewController.swift */,
 				947AF75E1BDEE33A008CADB4 /* Main.storyboard */,
 				947AF7641BDEE33A008CADB4 /* Assets.xcassets */,
 				947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */,
+				F1F9100D1BDFD39500B4814A /* IconActionViewController.swift in Sources */,
 				947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */,
 				947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */,
 				947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */,

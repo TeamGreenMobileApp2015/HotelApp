@@ -55,5 +55,30 @@ class ViewController: UIViewController {
     @IBAction func addDepartmentClicked(sender: AnyObject) {
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
+        let destination = segue.destinationViewController as! IconActionViewController
+        //Detectes which segue was triggered(Which icon was pressed)
+        if(segue.identifier == "Dining") {
+            destination.title = "Dining"
+        }
+        else if(segue.identifier == "Rooms") {
+            destination.title = "Rooms"
+        }
+        else if(segue.identifier == "Lobby") {
+            destination.title = "Lobby"
+        }
+        else if(segue.identifier == "HouseKeeping") {
+            destination.title = "HouseKeeping"
+        }
+        else if(segue.identifier == "Maintenance") {
+            destination.title = "Maintenance"
+        }
+        else if(segue.identifier == "AddDepartment") {
+            destination.title = "Add Department"
+        }
+    }
+    
 }
+
+//This will handle the different functions needed for each action on the icon screen
 
