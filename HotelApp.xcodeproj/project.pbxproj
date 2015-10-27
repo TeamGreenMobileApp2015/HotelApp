@@ -14,6 +14,7 @@
 		947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 947AF7611BDEE33A008CADB4 /* HotelApp.xcdatamodeld */; };
 		947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7641BDEE33A008CADB4 /* Assets.xcassets */; };
 		947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */; };
+		947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF76F1BDEF453008CADB4 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		947AF7641BDEE33A008CADB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947AF7671BDEE33A008CADB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		947AF7691BDEE33A008CADB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		947AF76F1BDEF453008CADB4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DFD359000926D860476055E6 /* Pods-HotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */,
 				947AF7691BDEE33A008CADB4 /* Info.plist */,
 				947AF7611BDEE33A008CADB4 /* HotelApp.xcdatamodeld */,
+				947AF76F1BDEF453008CADB4 /* LoginViewController.swift */,
 			);
 			path = HotelApp;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */,
 				947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */,
 				947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */,
 				947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */,
