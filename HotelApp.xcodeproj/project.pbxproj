@@ -15,6 +15,12 @@
 		947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7641BDEE33A008CADB4 /* Assets.xcassets */; };
 		947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */; };
 		947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF76F1BDEF453008CADB4 /* LoginViewController.swift */; };
+		947AF7791BDEFF4A008CADB4 /* add-dept-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7731BDEFF4A008CADB4 /* add-dept-icon.png */; };
+		947AF77A1BDEFF4A008CADB4 /* dining-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7741BDEFF4A008CADB4 /* dining-icon.png */; };
+		947AF77B1BDEFF4A008CADB4 /* housekeeping-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7751BDEFF4A008CADB4 /* housekeeping-icon.png */; };
+		947AF77C1BDEFF4A008CADB4 /* lobby-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7761BDEFF4A008CADB4 /* lobby-icon.png */; };
+		947AF77D1BDEFF4A008CADB4 /* maintenance-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7771BDEFF4A008CADB4 /* maintenance-icon.png */; };
+		947AF77E1BDEFF4A008CADB4 /* rooms-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7781BDEFF4A008CADB4 /* rooms-icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		947AF7671BDEE33A008CADB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		947AF7691BDEE33A008CADB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		947AF76F1BDEF453008CADB4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		947AF7731BDEFF4A008CADB4 /* add-dept-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-dept-icon.png"; path = "icons/add-dept-icon.png"; sourceTree = "<group>"; };
+		947AF7741BDEFF4A008CADB4 /* dining-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dining-icon.png"; path = "icons/dining-icon.png"; sourceTree = "<group>"; };
+		947AF7751BDEFF4A008CADB4 /* housekeeping-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "housekeeping-icon.png"; path = "icons/housekeeping-icon.png"; sourceTree = "<group>"; };
+		947AF7761BDEFF4A008CADB4 /* lobby-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lobby-icon.png"; path = "icons/lobby-icon.png"; sourceTree = "<group>"; };
+		947AF7771BDEFF4A008CADB4 /* maintenance-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maintenance-icon.png"; path = "icons/maintenance-icon.png"; sourceTree = "<group>"; };
+		947AF7781BDEFF4A008CADB4 /* rooms-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rooms-icon.png"; path = "icons/rooms-icon.png"; sourceTree = "<group>"; };
 		DFD359000926D860476055E6 /* Pods-HotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +85,7 @@
 		947AF7591BDEE33A008CADB4 /* HotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				947AF7721BDEFF34008CADB4 /* icons */,
 				947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */,
 				947AF75C1BDEE33A008CADB4 /* ViewController.swift */,
 				947AF75E1BDEE33A008CADB4 /* Main.storyboard */,
@@ -83,6 +96,19 @@
 				947AF76F1BDEF453008CADB4 /* LoginViewController.swift */,
 			);
 			path = HotelApp;
+			sourceTree = "<group>";
+		};
+		947AF7721BDEFF34008CADB4 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				947AF7731BDEFF4A008CADB4 /* add-dept-icon.png */,
+				947AF7741BDEFF4A008CADB4 /* dining-icon.png */,
+				947AF7751BDEFF4A008CADB4 /* housekeeping-icon.png */,
+				947AF7761BDEFF4A008CADB4 /* lobby-icon.png */,
+				947AF7771BDEFF4A008CADB4 /* maintenance-icon.png */,
+				947AF7781BDEFF4A008CADB4 /* rooms-icon.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 		A52A4A279C95912E1C580EC8 /* Pods */ = {
@@ -155,9 +181,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947AF77D1BDEFF4A008CADB4 /* maintenance-icon.png in Resources */,
+				947AF77A1BDEFF4A008CADB4 /* dining-icon.png in Resources */,
+				947AF77E1BDEFF4A008CADB4 /* rooms-icon.png in Resources */,
+				947AF77B1BDEFF4A008CADB4 /* housekeeping-icon.png in Resources */,
 				947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */,
+				947AF7791BDEFF4A008CADB4 /* add-dept-icon.png in Resources */,
 				947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */,
 				947AF7601BDEE33A008CADB4 /* Main.storyboard in Resources */,
+				947AF77C1BDEFF4A008CADB4 /* lobby-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
