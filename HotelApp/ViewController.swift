@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
+    let user = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if user == nil {
+            print("not logged in")
+            self.performSegueWithIdentifier("loginSegue", sender: self)
+            print("should have performed segueu")
+        } else {
+            print("is logged in apparently")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
