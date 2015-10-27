@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
                                 <rect key="frame" x="410" y="124" width="47" height="64"/>
                                 <animations/>
                                 <constraints>
@@ -43,10 +43,10 @@
                                 <state key="normal" backgroundImage="rooms-icon.png"/>
                                 <connections>
                                     <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="XcS-X6-axL"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Rooms" id="XcS-X6-axL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
                                 <rect key="frame" x="181" y="230" width="44" height="69"/>
                                 <animations/>
                                 <constraints>
@@ -55,7 +55,7 @@
                                 <state key="normal" backgroundImage="lobby-icon.png"/>
                                 <connections>
                                     <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="MGI-VF-K0q"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Lobby" id="MGI-VF-K0q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
@@ -68,7 +68,7 @@
                                 <state key="normal" backgroundImage="housekeeping-icon.png"/>
                                 <connections>
                                     <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="jqC-RB-UCJ"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
@@ -80,7 +80,7 @@
                                 <state key="normal" backgroundImage="maintenance-icon.png"/>
                                 <connections>
                                     <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="6Qv-oW-v01"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Maintenance" id="6Qv-oW-v01"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
@@ -92,10 +92,10 @@
                                 <state key="normal" backgroundImage="add-dept-icon.png"/>
                                 <connections>
                                     <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="Vm8-JK-cfA"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
                                 <rect key="frame" x="181" y="124" width="42" height="69"/>
                                 <animations/>
                                 <constraints>
@@ -105,7 +105,7 @@
                                 <state key="normal" backgroundImage="dining-icon.png"/>
                                 <connections>
                                     <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
-                                    <segue destination="hOJ-ty-3fb" kind="show" id="kpP-yf-WQf"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Dining" id="kpP-yf-WQf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,10 +141,11 @@
             </objects>
             <point key="canvasLocation" x="217" y="243"/>
         </scene>
-        <!--View Controller-->
+        <!--Icon View Controller-->
         <scene sceneID="h5z-l1-uo7">
             <objects>
-                <viewController id="hOJ-ty-3fb" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-5K-L3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hOJ-ty-3fb" customClass="IconViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SA1-Yj-U73"/>
                         <viewControllerLayoutGuide type="bottom" id="BPJ-9F-con"/>
@@ -152,11 +153,22 @@
                     <view key="view" contentMode="scaleToFill" id="mJ9-ey-iEw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-LE-z4Q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="YnY-es-9L1"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="Iea-LE-z4Q" id="yi5-fm-ame"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-5K-L3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="876" y="243"/>
         </scene>
@@ -233,6 +245,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rgm-EW-b44"/>
-        <segue reference="kpP-yf-WQf"/>
+        <segue reference="6Qv-oW-v01"/>
     </inferredMetricsTieBreakers>
 </document>
