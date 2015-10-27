@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,23 +17,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6B-C9-bnG">
-                                <rect key="frame" x="256" y="289" width="89" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
+                                <rect key="frame" x="410" y="124" width="47" height="64"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="89" id="xw9-UT-jTO"/>
+                                    <constraint firstAttribute="width" constant="47" id="B8F-lv-hJM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" backgroundImage="rooms-icon.png"/>
+                                <connections>
+                                    <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
+                                <rect key="frame" x="181" y="230" width="44" height="69"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Sal-sV-utu"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="lobby-icon.png"/>
+                                <connections>
+                                    <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
+                                <rect key="frame" x="399" y="236" width="68" height="63"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="94N-TD-ON7"/>
+                                    <constraint firstAttribute="width" constant="68" id="Z79-ti-gGY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="housekeeping-icon.png"/>
+                                <connections>
+                                    <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
+                                <rect key="frame" x="169" y="348" width="66" height="65"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="CMh-TY-0qg"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="maintenance-icon.png"/>
+                                <connections>
+                                    <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
+                                <rect key="frame" x="399" y="353" width="68" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="i4O-pi-29M"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="add-dept-icon.png"/>
+                                <connections>
+                                    <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
+                                <rect key="frame" x="181" y="124" width="42" height="69"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="ALn-sj-j3f"/>
+                                    <constraint firstAttribute="width" constant="42" id="rtx-85-WCi"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="dining-icon.png"/>
+                                <connections>
+                                    <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G6B-C9-bnG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="269" id="Ig6-qX-sHp"/>
-                            <constraint firstItem="G6B-C9-bnG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M8a-LG-Doj"/>
-                            <constraint firstItem="G6B-C9-bnG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sEM-Bw-ezB"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="firstBaseline" secondItem="FG4-sw-Fhu" secondAttribute="firstBaseline" id="3ES-gL-bD6"/>
+                            <constraint firstItem="kOQ-pm-pB0" firstAttribute="bottom" secondItem="5Q8-hA-Qpl" secondAttribute="bottom" id="5rE-Fy-X9G"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="leading" secondItem="a7E-Yk-AgV" secondAttribute="leading" id="AaF-wi-1Gh"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="baseline" secondItem="FG4-sw-Fhu" secondAttribute="baseline" id="AaN-iE-eXb"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="Ayb-cw-1XQ"/>
+                            <constraint firstItem="aQg-5g-1BB" firstAttribute="trailing" secondItem="kOQ-pm-pB0" secondAttribute="trailing" id="BfK-Zm-TMY"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="top" secondItem="hXL-ok-KJs" secondAttribute="bottom" constant="49" id="CyB-JQ-qqs"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="centerX" secondItem="5Q8-hA-Qpl" secondAttribute="centerX" id="HFu-W3-uKA"/>
+                            <constraint firstItem="FG4-sw-Fhu" firstAttribute="top" secondItem="a7E-Yk-AgV" secondAttribute="top" id="HP7-m7-u0j"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="169" id="IlP-PQ-wbV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Q8-hA-Qpl" secondAttribute="bottom" constant="187" id="Ke3-9r-5Xn"/>
+                            <constraint firstAttribute="trailing" secondItem="aQg-5g-1BB" secondAttribute="trailing" constant="133" id="X1E-e0-UqH"/>
+                            <constraint firstItem="kOQ-pm-pB0" firstAttribute="top" secondItem="aQg-5g-1BB" secondAttribute="bottom" constant="54" id="gPP-WI-4G1"/>
+                            <constraint firstItem="FG4-sw-Fhu" firstAttribute="centerX" secondItem="aQg-5g-1BB" secondAttribute="centerX" id="lgs-VP-QK5"/>
+                            <constraint firstItem="aQg-5g-1BB" firstAttribute="bottom" secondItem="hXL-ok-KJs" secondAttribute="bottom" id="lmC-rR-3p8"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="top" secondItem="a7E-Yk-AgV" secondAttribute="bottom" constant="37" id="vNJ-iX-Vyx"/>
+                            <constraint firstItem="kOQ-pm-pB0" firstAttribute="leading" secondItem="aQg-5g-1BB" secondAttribute="leading" id="xHr-5J-GMo"/>
+                            <constraint firstItem="aQg-5g-1BB" firstAttribute="top" secondItem="FG4-sw-Fhu" secondAttribute="bottom" constant="48" id="z3Z-gF-AEG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -41,6 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="217" y="243"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ohT-zB-eMN">
@@ -105,4 +180,12 @@
             <point key="canvasLocation" x="245" y="1178"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add-dept-icon.png" width="69" height="57"/>
+        <image name="dining-icon.png" width="36" height="58"/>
+        <image name="housekeeping-icon.png" width="60" height="58"/>
+        <image name="lobby-icon.png" width="36" height="58"/>
+        <image name="maintenance-icon.png" width="56" height="58"/>
+        <image name="rooms-icon.png" width="36" height="58"/>
+    </resources>
 </document>
