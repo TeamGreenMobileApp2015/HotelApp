@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IconActionViewController: UIViewController {
+class CalendarViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     

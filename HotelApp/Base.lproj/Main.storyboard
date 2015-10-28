@@ -156,7 +156,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="h5z-l1-uo7">
             <objects>
-                <viewController title="Calendar View Controller" id="hOJ-ty-3fb" customClass="IconActionViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Calendar View Controller" id="hOJ-ty-3fb" customClass="CalendarViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SA1-Yj-U73"/>
                         <viewControllerLayoutGuide type="bottom" id="BPJ-9F-con"/>
