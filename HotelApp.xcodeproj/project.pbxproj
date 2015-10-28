@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D9CC3DE22773AF90F780E2E /* Pods_HotelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941C27613445FF0D063412A2 /* Pods_HotelApp.framework */; };
+		945E240A1BE167B900CF98C4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E24091BE167B900CF98C4 /* Task.swift */; };
+		945E240C1BE16A3700CF98C4 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E240B1BE16A3700CF98C4 /* Department.swift */; };
 		947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */; };
 		947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF75C1BDEE33A008CADB4 /* ViewController.swift */; };
 		947AF7601BDEE33A008CADB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF75E1BDEE33A008CADB4 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		4C657AB0776E2288AF8342DA /* Pods-HotelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		941C27613445FF0D063412A2 /* Pods_HotelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		945E24091BE167B900CF98C4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		945E240B1BE16A3700CF98C4 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		947AF7571BDEE33A008CADB4 /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947AF75C1BDEE33A008CADB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				947AF7691BDEE33A008CADB4 /* Info.plist */,
 				947AF7611BDEE33A008CADB4 /* HotelApp.xcdatamodeld */,
 				947AF76F1BDEF453008CADB4 /* LoginViewController.swift */,
+				945E24091BE167B900CF98C4 /* Task.swift */,
+				945E240B1BE16A3700CF98C4 /* Department.swift */,
 			);
 			path = HotelApp;
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 				F1F9100D1BDFD39500B4814A /* IconActionViewController.swift in Sources */,
 				947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */,
 				947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */,
+				945E240A1BE167B900CF98C4 /* Task.swift in Sources */,
+				945E240C1BE16A3700CF98C4 /* Department.swift in Sources */,
 				947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
