@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -34,114 +35,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qtl-kr-KYa">
-                                <rect key="frame" x="308" y="0.0" width="292" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
-                                        <rect key="frame" x="112" y="171" width="68" height="60"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="add-dept-icon.png"/>
-                                        <connections>
-                                            <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
-                                        <rect key="frame" x="123" y="268" width="47" height="64"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="rooms-icon.png"/>
-                                        <connections>
-                                            <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="Rooms" id="XcS-X6-axL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
-                                        <rect key="frame" x="112" y="382" width="68" height="63"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="housekeeping-icon.png"/>
-                                        <connections>
-                                            <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
+                                <rect key="frame" x="109" y="235" width="67" height="76"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="kOQ-pm-pB0" firstAttribute="centerX" secondItem="Qtl-kr-KYa" secondAttribute="centerX" id="FBW-J5-9ud"/>
-                                    <constraint firstAttribute="width" constant="300" id="FQS-Da-aOl"/>
-                                    <constraint firstItem="FG4-sw-Fhu" firstAttribute="centerX" secondItem="Qtl-kr-KYa" secondAttribute="centerX" id="H8S-Ze-2oC"/>
-                                    <constraint firstItem="FG4-sw-Fhu" firstAttribute="centerY" secondItem="Qtl-kr-KYa" secondAttribute="centerY" id="i4h-E4-qVe"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="jtf-b1-fQU"/>
-                                    <constraint firstItem="aQg-5g-1BB" firstAttribute="centerX" secondItem="FG4-sw-Fhu" secondAttribute="centerX" id="lPG-IE-5ZK"/>
-                                    <constraint firstAttribute="height" constant="600" id="nXn-gm-0g7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="600" id="poU-JT-XlY"/>
-                                    <constraint firstItem="aQg-5g-1BB" firstAttribute="top" secondItem="FG4-sw-Fhu" secondAttribute="bottom" constant="75" id="tvU-Rb-5MM"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-uy-JPX">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
-                                        <rect key="frame" x="128" y="265" width="44" height="69"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="lobby-icon.png"/>
-                                        <connections>
-                                            <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="Lobby" id="MGI-VF-K0q"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
-                                        <rect key="frame" x="118" y="366" width="66" height="65"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="maintenance-icon.png"/>
-                                        <connections>
-                                            <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="Maintenance" id="6Qv-oW-v01"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
-                                        <rect key="frame" x="130" y="171" width="42" height="69"/>
-                                        <animations/>
-                                        <state key="normal" backgroundImage="dining-icon.png"/>
-                                        <connections>
-                                            <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
-                                            <segue destination="hOJ-ty-3fb" kind="show" identifier="Dining" id="kpP-yf-WQf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <state key="normal" backgroundImage="lobby-icon.png"/>
+                                <connections>
+                                    <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Lobby" id="MGI-VF-K0q"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="FYi-q7-x00" userLabel="BlueLineC.png">
+                                <rect key="frame" x="298" y="84" width="3" height="431"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hXL-ok-KJs" firstAttribute="centerX" secondItem="f1G-uy-JPX" secondAttribute="centerX" id="0NC-gA-UqB"/>
-                                    <constraint firstItem="a7E-Yk-AgV" firstAttribute="centerX" secondItem="hXL-ok-KJs" secondAttribute="centerX" id="6pc-FK-9Fl"/>
-                                    <constraint firstItem="5Q8-hA-Qpl" firstAttribute="centerX" secondItem="f1G-uy-JPX" secondAttribute="centerX" id="6rw-Od-1Gb"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="600" id="GcU-SD-X2u"/>
-                                    <constraint firstAttribute="height" constant="600" id="RWz-Zp-eZI"/>
-                                    <constraint firstAttribute="width" constant="300" id="aMa-1c-4de"/>
-                                    <constraint firstItem="hXL-ok-KJs" firstAttribute="centerY" secondItem="f1G-uy-JPX" secondAttribute="centerY" id="lPZ-kt-awI"/>
-                                    <constraint firstItem="hXL-ok-KJs" firstAttribute="top" secondItem="a7E-Yk-AgV" secondAttribute="bottom" constant="75" id="nBB-10-kpE"/>
-                                    <constraint firstItem="5Q8-hA-Qpl" firstAttribute="top" secondItem="hXL-ok-KJs" secondAttribute="bottom" constant="75" id="zDK-Tw-ODY"/>
+                                    <constraint firstAttribute="width" constant="3" id="XUO-2p-x7Q" userLabel="width = 2"/>
+                                    <constraint firstAttribute="width" secondItem="FYi-q7-x00" secondAttribute="height" multiplier="3:431" id="fX9-je-rGK"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-Xg-HJj" userLabel="BlueLine1.png">
+                                <rect key="frame" x="26" y="195" width="548" height="2"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="xVN-nn-BlP"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="1uq-Jh-3sl" userLabel="BlueLine2.png">
+                                <rect key="frame" x="26" y="353" width="548" height="2"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="vAg-Xe-hDW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="vTb-zn-SdF" userLabel="BlueLine3.png">
+                                <rect key="frame" x="20" y="513" width="554" height="2"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="YcF-vy-mYT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
+                                <rect key="frame" x="386.5" y="86" width="73.5" height="69"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="dining-icon.png"/>
+                                <connections>
+                                    <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Dining" id="kpP-yf-WQf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
+                                <rect key="frame" x="405" y="241" width="68" height="63"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="housekeeping-icon.png"/>
+                                <connections>
+                                    <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
+                                <rect key="frame" x="400" y="400" width="68" height="60"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="add-dept-icon.png"/>
+                                <connections>
+                                    <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
+                                <rect key="frame" x="109" y="397" width="67" height="65"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Q8-hA-Qpl" secondAttribute="height" multiplier="67:65" id="f7z-1b-OsB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="maintenance-icon.png"/>
+                                <connections>
+                                    <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Maintenance" id="6Qv-oW-v01"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
+                                <rect key="frame" x="109" y="84" width="67" height="74"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="rooms-icon.png"/>
+                                <connections>
+                                    <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Rooms" id="XcS-X6-axL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="height" secondItem="Qtl-kr-KYa" secondAttribute="height" id="1wG-Hz-537"/>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="width" secondItem="Qtl-kr-KYa" secondAttribute="width" id="3kO-98-BgZ"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="leading" secondItem="f1G-uy-JPX" secondAttribute="trailing" id="DUo-ha-Zs3"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FYx-uI-Vcq"/>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="centerY" secondItem="Qtl-kr-KYa" secondAttribute="centerY" id="Hxy-cn-1iM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qtl-kr-KYa" secondAttribute="trailing" id="Lca-Sf-6ek"/>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Uw6-r1-tM4"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="top" secondItem="f1G-uy-JPX" secondAttribute="top" id="VRC-vR-3tX"/>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ae8-5w-SaS"/>
-                            <constraint firstItem="f1G-uy-JPX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cVR-0G-CnU"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="leading" secondItem="f1G-uy-JPX" secondAttribute="trailing" id="hEX-N4-k52"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="leading" secondItem="f1G-uy-JPX" secondAttribute="trailing" id="jMS-AV-UT9"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="jo5-lx-k3b"/>
-                            <constraint firstItem="Qtl-kr-KYa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qZg-lU-7Vh"/>
+                            <constraint firstItem="vTb-zn-SdF" firstAttribute="top" secondItem="5Q8-hA-Qpl" secondAttribute="bottom" constant="51" id="29M-hE-NrW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a7E-Yk-AgV" secondAttribute="trailing" constant="120" id="31z-gK-lTE"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="5Ed-Rb-2My"/>
+                            <constraint firstItem="kOQ-pm-pB0" firstAttribute="top" secondItem="1uq-Jh-3sl" secondAttribute="bottom" constant="45" id="5aV-gr-0Vq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ndb-Xg-HJj" secondAttribute="leading" id="6Qj-Ef-GMX"/>
+                            <constraint firstItem="ndb-Xg-HJj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8bs-TL-wMy"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="width" secondItem="aQg-5g-1BB" secondAttribute="width" id="9uc-uT-ejc"/>
+                            <constraint firstItem="ndb-Xg-HJj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="131" id="C0a-7Z-Shy"/>
+                            <constraint firstItem="1uq-Jh-3sl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CFM-VQ-3F2"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="89" id="GNQ-Db-q53"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="width" secondItem="aQg-5g-1BB" secondAttribute="width" id="Gs6-lx-a7i"/>
+                            <constraint firstItem="aQg-5g-1BB" firstAttribute="top" secondItem="ndb-Xg-HJj" secondAttribute="bottom" constant="44" id="ICE-AI-4un"/>
+                            <constraint firstItem="kOQ-pm-pB0" firstAttribute="width" secondItem="5Q8-hA-Qpl" secondAttribute="width" id="Iul-Jz-GqV"/>
+                            <constraint firstItem="FYi-q7-x00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JIG-jJ-3UI"/>
+                            <constraint firstItem="ndb-Xg-HJj" firstAttribute="top" secondItem="a7E-Yk-AgV" secondAttribute="bottom" constant="40" id="KXm-Dg-xX7"/>
+                            <constraint firstItem="1uq-Jh-3sl" firstAttribute="top" secondItem="aQg-5g-1BB" secondAttribute="bottom" constant="49" id="Ksi-id-UoR"/>
+                            <constraint firstItem="vTb-zn-SdF" firstAttribute="top" secondItem="1uq-Jh-3sl" secondAttribute="bottom" constant="158" id="NyY-dM-LXh"/>
+                            <constraint firstItem="FG4-sw-Fhu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Pnw-wB-Srv"/>
+                            <constraint firstItem="1uq-Jh-3sl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="Pvs-W6-XyJ"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="width" secondItem="FG4-sw-Fhu" secondAttribute="width" id="Qh1-S2-pxS"/>
+                            <constraint firstItem="aQg-5g-1BB" firstAttribute="height" secondItem="hXL-ok-KJs" secondAttribute="height" id="S5x-4W-rRr"/>
+                            <constraint firstItem="1uq-Jh-3sl" firstAttribute="top" secondItem="hXL-ok-KJs" secondAttribute="bottom" constant="42" id="TY4-UP-34O"/>
+                            <constraint firstItem="vTb-zn-SdF" firstAttribute="top" secondItem="kOQ-pm-pB0" secondAttribute="bottom" constant="53" id="V5L-Z6-zCs"/>
+                            <constraint firstItem="vTb-zn-SdF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="ZFa-qv-1SH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ndb-Xg-HJj" secondAttribute="trailing" id="aWR-zr-j4l"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="height" secondItem="kOQ-pm-pB0" secondAttribute="height" id="b9Q-jw-TIv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FYi-q7-x00" secondAttribute="bottom" constant="85" id="bMM-mD-ohh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vTb-zn-SdF" secondAttribute="bottom" constant="85" id="bjT-Lf-Zhy"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="width" secondItem="hXL-ok-KJs" secondAttribute="width" id="c6R-gT-gu9"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="top" secondItem="ndb-Xg-HJj" secondAttribute="bottom" constant="38" id="d9B-JE-qmX"/>
+                            <constraint firstItem="FG4-sw-Fhu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="89" id="dEp-6o-hZp"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="height" secondItem="FG4-sw-Fhu" secondAttribute="height" id="duq-9D-6S1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1uq-Jh-3sl" secondAttribute="trailing" constant="6" id="e3u-Nc-cGP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vTb-zn-SdF" secondAttribute="leading" id="ePh-9n-HjF"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="width" secondItem="aQg-5g-1BB" secondAttribute="height" multiplier="67:63" id="gBR-vN-R1D"/>
+                            <constraint firstItem="FYi-q7-x00" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="gVB-uz-92b"/>
+                            <constraint firstItem="vTb-zn-SdF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gfz-St-BtD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aQg-5g-1BB" secondAttribute="trailing" constant="107" id="gyM-EB-tnf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kOQ-pm-pB0" secondAttribute="trailing" constant="112" id="lAf-WP-iQ3"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="89" id="oiJ-Z7-7Vb"/>
+                            <constraint firstItem="hXL-ok-KJs" firstAttribute="height" secondItem="5Q8-hA-Qpl" secondAttribute="height" id="pji-Gj-0RJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vTb-zn-SdF" secondAttribute="trailing" constant="6" id="qhv-uD-M9g"/>
+                            <constraint firstItem="5Q8-hA-Qpl" firstAttribute="top" secondItem="1uq-Jh-3sl" secondAttribute="bottom" constant="42" id="wlG-as-Fbw"/>
+                            <constraint firstItem="a7E-Yk-AgV" firstAttribute="height" secondItem="aQg-5g-1BB" secondAttribute="height" id="y9j-Xu-4gn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OXk-ku-arB"/>
@@ -151,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181" y="243"/>
+            <point key="canvasLocation" x="257" y="237"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="h5z-l1-uo7">
@@ -335,6 +362,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlueLine.png" width="10" height="1280"/>
         <image name="add-dept-icon.png" width="69" height="57"/>
         <image name="dining-icon.png" width="36" height="58"/>
         <image name="housekeeping-icon.png" width="60" height="58"/>
@@ -343,7 +371,7 @@
         <image name="rooms-icon.png" width="36" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rgm-EW-b44"/>
         <segue reference="kpP-yf-WQf"/>
+        <segue reference="hoU-35-wXH"/>
     </inferredMetricsTieBreakers>
 </document>
