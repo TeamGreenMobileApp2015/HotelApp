@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
-        let destination = segue.destinationViewController as! IconActionViewController
+        let destination = segue.destinationViewController as! CalendarViewController
         //Detectes which segue was triggered(Which icon was pressed)
         if(segue.identifier == "Dining") {
             destination.title = "Dining"
