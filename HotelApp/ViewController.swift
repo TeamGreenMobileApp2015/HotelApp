@@ -56,26 +56,28 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
-        let destination = segue.destinationViewController as! CalendarViewController
-        //Detectes which segue was triggered(Which icon was pressed)
-        if(segue.identifier == "Dining") {
-            destination.title = "Dining"
+        if let destination = segue.destinationViewController as? CalendarViewController{
+            //Detectes which segue was triggered(Which icon was pressed)
+            if(segue.identifier == "Dining") {
+                destination.title = "Dining"
+            }
+            else if(segue.identifier == "Rooms") {
+                destination.title = "Rooms"
+            }
+            else if(segue.identifier == "Lobby") {
+                destination.title = "Lobby"
+            }
+            else if(segue.identifier == "HouseKeeping") {
+                destination.title = "HouseKeeping"
+            }
+            else if(segue.identifier == "Maintenance") {
+                destination.title = "Maintenance"
+            }
+            else if(segue.identifier == "AddDepartment") {
+                destination.title = "Add Department"
+            }
         }
-        else if(segue.identifier == "Rooms") {
-            destination.title = "Rooms"
-        }
-        else if(segue.identifier == "Lobby") {
-            destination.title = "Lobby"
-        }
-        else if(segue.identifier == "HouseKeeping") {
-            destination.title = "HouseKeeping"
-        }
-        else if(segue.identifier == "Maintenance") {
-            destination.title = "Maintenance"
-        }
-        else if(segue.identifier == "AddDepartment") {
-            destination.title = "Add Department"
-        }
+        
     }
     
 }
