@@ -86,16 +86,20 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HotelApp/AFNetworking.framework"
   install_framework "Pods-HotelApp/Bolts.framework"
+  install_framework "Pods-HotelApp/CalendarView.framework"
   install_framework "Pods-HotelApp/FLKAutoLayout.framework"
   install_framework "Pods-HotelApp/ORStackView.framework"
   install_framework "Pods-HotelApp/Parse.framework"
+  install_framework "Pods-HotelApp/SwiftMoment.framework"
   install_framework "Pods-HotelApp/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HotelApp/AFNetworking.framework"
   install_framework "Pods-HotelApp/Bolts.framework"
+  install_framework "Pods-HotelApp/CalendarView.framework"
   install_framework "Pods-HotelApp/FLKAutoLayout.framework"
   install_framework "Pods-HotelApp/ORStackView.framework"
   install_framework "Pods-HotelApp/Parse.framework"
+  install_framework "Pods-HotelApp/SwiftMoment.framework"
   install_framework "Pods-HotelApp/SwiftyJSON.framework"
 fi
