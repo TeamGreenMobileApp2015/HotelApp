@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import CalendarView
 
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    var calendar: CalendarView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createCalenderView()
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +25,10 @@ class CalendarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func createCalenderView(){
+        calendar = CalendarView(frame: CGRectMake(0, 0, CGRectGetWidth(view.frame), 320))
+        view.addSubview(calendar!)
+    }
 
     /*
     // MARK: - Navigation
