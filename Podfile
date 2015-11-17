@@ -6,5 +6,6 @@ target 'HotelApp' do
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
   pod 'Parse'
-  pod 'CalendarView', '~> 1.1'
+  pod 'SwiftMoment'
+  pod 'CVCalendar', '~> 1.2.7'
 end

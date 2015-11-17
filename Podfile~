@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '8.3'
 use_frameworks!
 
 target 'HotelApp' do
@@ -6,5 +6,6 @@ target 'HotelApp' do
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
   pod 'Parse'
+  pod 'SwiftMoment'
   pod 'CalendarView', '~> 1.1'
 end

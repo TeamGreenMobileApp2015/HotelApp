@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="250.5" y="242.5"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Calendar Delegate-->
         <scene sceneID="h5z-l1-uo7">
             <objects>
                 <viewController title="Calendar View Controller" id="hOJ-ty-3fb" customClass="CalendarViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,25 +159,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-LE-z4Q">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-LE-z4Q">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="e9h-s2-yzo"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Title" id="YnY-es-9L1"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPO-YF-KPA" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="47"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="hOJ-ty-3fb" id="wfQ-3v-wpN"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0W-0E-Rrt" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="119" width="375" height="302"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="calendarDelegate" destination="hOJ-ty-3fb" id="YcU-49-Yf1"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fPO-YF-KPA" firstAttribute="top" secondItem="SA1-Yj-U73" secondAttribute="bottom" id="1xC-r8-7xH"/>
+                            <constraint firstItem="m0W-0E-Rrt" firstAttribute="top" secondItem="mJ9-ey-iEw" secondAttribute="top" constant="119" id="GdT-dy-4wn"/>
+                            <constraint firstAttribute="trailing" secondItem="fPO-YF-KPA" secondAttribute="trailing" id="JO5-33-cyh"/>
+                            <constraint firstItem="m0W-0E-Rrt" firstAttribute="top" secondItem="fPO-YF-KPA" secondAttribute="bottom" constant="8" symbolic="YES" id="NMc-V0-2tq"/>
+                            <constraint firstItem="fPO-YF-KPA" firstAttribute="leading" secondItem="m0W-0E-Rrt" secondAttribute="leading" id="P9Z-je-URR"/>
+                            <constraint firstItem="Iea-LE-z4Q" firstAttribute="leading" secondItem="fPO-YF-KPA" secondAttribute="leading" id="Si5-X6-GOs"/>
+                            <constraint firstItem="Iea-LE-z4Q" firstAttribute="top" secondItem="mJ9-ey-iEw" secondAttribute="top" id="XeM-W9-PgM"/>
+                            <constraint firstItem="m0W-0E-Rrt" firstAttribute="trailing" secondItem="fPO-YF-KPA" secondAttribute="trailing" id="dNc-lL-h6W"/>
+                            <constraint firstItem="m0W-0E-Rrt" firstAttribute="leading" secondItem="mJ9-ey-iEw" secondAttribute="leading" id="g4H-st-YkD"/>
+                            <constraint firstItem="BPJ-9F-con" firstAttribute="top" secondItem="m0W-0E-Rrt" secondAttribute="bottom" constant="246" id="u2y-Zz-lbJ"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="calendarView" destination="m0W-0E-Rrt" id="Mh3-0E-mSs"/>
+                        <outlet property="menuView" destination="fPO-YF-KPA" id="qeh-Ih-21n"/>
                         <outlet property="navigationBar" destination="Iea-LE-z4Q" id="yi5-fm-ame"/>
                         <segue destination="Pa0-9J-Ir5" kind="showDetail" identifier="showDayView" id="Hls-Lf-0dt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-5K-L3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="243"/>
+            <point key="canvasLocation" x="875.5" y="242.5"/>
         </scene>
         <!--Day View-->
         <scene sceneID="f36-Yh-NWc">

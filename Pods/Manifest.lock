@@ -21,8 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.4.0)
-  - CalendarView (1.1.0):
-    - SwiftMoment (~> 0.1)
+  - CVCalendar (1.2.7)
   - FLKAutoLayout (0.2.1)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
@@ -33,15 +32,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
-  - CalendarView (~> 1.1)
+  - CVCalendar (~> 1.2.7)
   - ORStackView (~> 3.0)
   - Parse
+  - SwiftMoment
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
-  CalendarView: adad8997eae3474f2cfd8f300a0a16914f4fd4b3
+  CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
