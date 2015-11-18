@@ -9,13 +9,24 @@
 import UIKit
 import SwiftMoment
 import CVCalendar
+import Parse
+
 
 class CalendarViewController: UIViewController {
 
-    var shouldShowDaysOut = true
+    var shouldShowDaysOut = false
     var animationFinished = true
     
     var selectedDay:DayView!
+    
+    var departments = [Department]()
+    
+    
+    // Set up date object
+    let date = NSDate()
+    
+    let calendar = NSCalendar.currentCalendar()
+
     
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -24,8 +35,55 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        getDepartments()
+        
     }
 
+    func getDepartments() {
+        Department.query()!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            self.departments = objects as! [Department]
+            print("got departments")
+            
+            self.loadDateBoxesByDepartment()
+        }
+    }
+    
+    func loadDateBoxesByDepartment() {
+        
+        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        
+        let currentMonth = components.month
+        
+        // Getting the First and Last date of the month
+        components.day = 1
+        components.year = 2015
+        let firstDateOfMonth: NSDate = calendar.dateFromComponents(components)!
+        print(firstDateOfMonth)
+        
+        components.month  += 1
+        
+        let lastDateOfMonth: NSDate = calendar.dateFromComponents(components)!
+        
+        components.month = currentMonth
+        components.day = 1
+        
+        // Loop through the entire month
+        var indexedDay = calendar.dateFromComponents(components)!
+        while indexedDay.compare(lastDateOfMonth) == NSComparisonResult.OrderedAscending {
+            
+            print(calendar.dateFromComponents(components)!)
+            
+            
+            
+            components.day += 1
+            indexedDay = calendar.dateFromComponents(components)!
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -78,7 +136,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
             return true
         }
         
-        return false
+        return true
     }
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
@@ -126,50 +184,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return false
     }
     
-    func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        let π = M_PI
-        
-        let ringSpacing: CGFloat = 3.0
-        let ringInsetWidth: CGFloat = 1.0
-        let ringVerticalOffset: CGFloat = 1.0
-        var ringLayer: CAShapeLayer!
-        let ringLineWidth: CGFloat = 4.0
-        let ringLineColour: UIColor = .blueColor()
-        
-        let newView = UIView(frame: dayView.bounds)
-        
-        let diameter: CGFloat = (newView.bounds.width) - ringSpacing
-        let radius: CGFloat = diameter / 2.0
-        
-        let rect = CGRectMake(newView.frame.midX-radius, newView.frame.midY-radius-ringVerticalOffset, diameter, diameter)
-        
-        ringLayer = CAShapeLayer()
-        newView.layer.addSublayer(ringLayer)
-        
-        ringLayer.fillColor = nil
-        ringLayer.lineWidth = ringLineWidth
-        ringLayer.strokeColor = ringLineColour.CGColor
-        
-        let ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
-        let ringRect: CGRect = CGRectInset(rect, ringLineWidthInset, ringLineWidthInset)
-        let centrePoint: CGPoint = CGPointMake(ringRect.midX, ringRect.midY)
-        let startAngle: CGFloat = CGFloat(-π/2.0)
-        let endAngle: CGFloat = CGFloat(π * 2.0) + startAngle
-        let ringPath: UIBezierPath = UIBezierPath(arcCenter: centrePoint, radius: ringRect.width/2.0, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        
-        ringLayer.path = ringPath.CGPath
-        ringLayer.frame = newView.layer.bounds
-        
-        return newView
-    }
-    
-    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        if (Int(arc4random_uniform(3)) == 1) {
-            return true
-        }
-        
-        return false
-    }
 }
 
 extension CalendarViewController {
@@ -178,7 +192,9 @@ extension CalendarViewController {
         //        let calendarManager = calendarView.manager
         let components = Manager.componentsForDate(NSDate()) // from today
         
+        print(components.month)
         components.month += offset
+        print(components.month)
         
         let resultDate = calendar.dateFromComponents(components)!
         
