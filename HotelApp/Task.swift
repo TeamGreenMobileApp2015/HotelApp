@@ -37,4 +37,6 @@ class Task : PFObject, PFSubclassing {
     // Department to group the task to
     @NSManaged var department : Department
     
+    @NSManaged var completed : Bool
+    
 }
