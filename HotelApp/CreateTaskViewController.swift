@@ -100,7 +100,7 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     
     @IBAction func CreateTaskButton(sender: AnyObject) {
-        var inputComplete = true
+        var inputCheck = true
         
         //set task name
         if let taskName = taskNameTextField.text {
@@ -122,7 +122,7 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                     alert.dismissViewControllerAnimated(true, completion: nil)
                 })
                 
-                inputComplete = false
+                inputCheck = false
                 print("taskName missing. Data will not be saved.")
             }
         }
@@ -141,13 +141,13 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         newTask.completed = false
         
         //if all data for the task has been set...
-        if inputComplete {
+        if inputCheck {
             
             //save the new task to the cloud
             newTask.saveEventually()
             print("Saving task")
             
-            //display save notification and return to previous view controller
+            //display "Task saved" notification and return to previous view controller
             let alert = UIAlertController(title: "Task added", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             
             presentViewController(alert, animated: true, completion: nil)
