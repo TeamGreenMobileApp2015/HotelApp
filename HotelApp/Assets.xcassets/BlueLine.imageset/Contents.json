@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "BlueLine.png",
       "scale" : "1x"
     },
     {
@@ -10,7 +11,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "MenuBackground.png",
+      "filename" : "BlueLine-1.png",
       "scale" : "3x"
     }
   ],
