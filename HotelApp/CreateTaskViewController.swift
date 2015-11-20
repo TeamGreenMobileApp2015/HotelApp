@@ -137,6 +137,9 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         newTask.dueDate = datePicker.date
         print("dueDate: \(datePicker.date)")
         
+        //Set task as incomplete
+        newTask.completed = false
+        
         //if all data for the task has been set...
         if inputComplete {
             
