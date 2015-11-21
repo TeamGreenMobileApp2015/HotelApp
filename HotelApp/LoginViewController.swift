@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginViewController : UIViewController {
+class LoginViewController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -20,8 +20,10 @@ class LoginViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
         
-        
+  
         
     }
     
@@ -49,6 +51,11 @@ class LoginViewController : UIViewController {
                 
             }
         }
-        
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 }
