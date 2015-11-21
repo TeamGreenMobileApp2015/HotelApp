@@ -23,6 +23,7 @@ class CalendarViewController: UIViewController {
     
     var departments = [Department]()
     
+    var department : Department? = nil
     
     // Set up date object
     let date = NSDate()
@@ -109,7 +110,14 @@ class CalendarViewController: UIViewController {
     }
     
     func getTasksForDay(day: Int, startDate: NSDate, endDate: NSDate) {
-        Task.query()?.whereKey("dueDate", greaterThanOrEqualTo: startDate).whereKey("dueDate", lessThanOrEqualTo: endDate).findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+        
+        let query = Task.query()?.whereKey("dueDate", greaterThanOrEqualTo: startDate).whereKey("dueDate", lessThanOrEqualTo: endDate)
+        
+        if self.department != nil {
+            query?.whereKey("department", equalTo: self.department!)
+        }
+        
+        query!.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error != nil {
                 print("has error")
