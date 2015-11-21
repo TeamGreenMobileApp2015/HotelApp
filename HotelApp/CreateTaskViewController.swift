@@ -16,9 +16,9 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var deptPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var pickerData: [String] = [String]()
-    
-    var deptSelection: String?
+    var deptSelection: Department?
+    var deptObjects: [Department] = [Department]()
+
     
     //parse object subclasses
     var newTask = Task()
@@ -46,43 +46,21 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return deptObjects.count
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return deptObjects[row].name
     }
     
     // Catpure the picker view selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        deptSelection = pickerData[row]
+        deptSelection = deptObjects[row]
     }
     
-    func loadDept(){
-        
-        //load the department names into the picker view
-        if let query = Department.query(){
-            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                if error == nil {
-                    if let objects = objects as? [Department]{
-                        for dept in objects {
-                            if dept.name != "" {
-                                self.pickerData.append(dept.name)
-                            }
-                            
-                            //reload the deptPicker
-                            self.deptPicker.reloadAllComponents()
-                            
-                            //set first as initial selection
-                            self.deptSelection = self.pickerData[0]
-                        }
-                    }
-                }
-            }
-        }
-    }
     
+    // MARK: Buttons
     @IBAction func CreateTaskButton(sender: AnyObject) {
         var inputCheck = true
         
@@ -113,11 +91,13 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         
         //set task department
         if let deptSelection = deptSelection {
-            newDept.name = deptSelection
-            newTask.department = newDept
+            newTask.department = deptSelection
             print("department: \(newTask.department.name)")
+        } else {
+            print("Error - No Dept Selected")
+            inputCheck = false
         }
-        
+
         //Set task due date
         newTask.dueDate = datePicker.date
         print("dueDate: \(datePicker.date)")
@@ -147,6 +127,29 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                     navController.popViewControllerAnimated(true)
                 }
             })
+        }
+    }
+    
+    // MARK: Other functions
+    
+    func loadDept(){
+        
+        //load the department names into the picker view
+        if let query = Department.query(){
+            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                if error == nil {
+                    if let objects = objects as? [Department]{
+                        self.deptObjects = objects
+                        
+                        //reload the deptPicker
+                        self.deptPicker.reloadAllComponents()
+                        
+                        //set first as initial selection
+                        self.deptSelection = self.deptObjects[0]
+                        
+                    }
+                }
+            }
         }
     }
 }
