@@ -10,24 +10,36 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginViewController : UIViewController {
+class LoginViewController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    var keyboardIsShown : Bool = false;
     
     let user = PFUser.currentUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        self.usernameField.delegate = self;
+        self.passwordField.delegate = self;
         
+        //Observer for showing the keyboard that calls keyboardWillShow method
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        //Observer for hiding the keyboard that calls keyboardWillHide method
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         
+        //Swipe Gesture Recogniser that calls dismissKeyboard
+        let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "dismissKeyboard")
+        //Sets the swipe gesture to down
+        swipe.direction = UISwipeGestureRecognizerDirection.Down
+        //Adds the recogniser to the view
+        self.view.addGestureRecognizer(swipe)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onLoginClicked(sender: AnyObject) {
@@ -49,6 +61,34 @@ class LoginViewController : UIViewController {
                 
             }
         }
-        
+    }
+    
+    //Lowers the keyboard when return is clicked
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    //Raises the view if the keyboard is not already being shown
+    func keyboardWillShow(sender: NSNotification) {
+        if(!keyboardIsShown){
+            self.view.frame.origin.y -= 150
+        }
+        keyboardIsShown = true;
+    }
+    
+    //Lowers the view if the keyboard is show
+    func keyboardWillHide(sender: NSNotification) {
+        if(keyboardIsShown){
+            self.view.frame.origin.y += 150
+
+        }
+        keyboardIsShown = false;
+    }
+    
+    //Lowers the keyboard on swipe down
+    func dismissKeyboard() {
+        self.usernameField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
     }
 }
