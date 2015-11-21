@@ -31,4 +31,10 @@ class Department : PFObject, PFSubclassing {
     // Name of the Department
     @NSManaged var name : String
     
+    @NSManaged var red : Int
+    
+    @NSManaged var green : Int
+    
+    @NSManaged var blue : Int
+    
 }

@@ -12,6 +12,7 @@
 		945E240C1BE16A3700CF98C4 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E240B1BE16A3700CF98C4 /* Department.swift */; };
 		945E240E1BE1811400CF98C4 /* DayViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E240D1BE1811400CF98C4 /* DayViewViewController.swift */; };
 		945E24101BE1818200CF98C4 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E240F1BE1818200CF98C4 /* CreateTaskViewController.swift */; };
+		946800651C00C31400042597 /* DepartmentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946800641C00C31400042597 /* DepartmentDate.swift */; };
 		947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */; };
 		947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF75C1BDEE33A008CADB4 /* ViewController.swift */; };
 		947AF7601BDEE33A008CADB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF75E1BDEE33A008CADB4 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		945E240B1BE16A3700CF98C4 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		945E240D1BE1811400CF98C4 /* DayViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewViewController.swift; sourceTree = "<group>"; };
 		945E240F1BE1818200CF98C4 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		946800641C00C31400042597 /* DepartmentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDate.swift; sourceTree = "<group>"; };
 		947AF7571BDEE33A008CADB4 /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947AF75C1BDEE33A008CADB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				945E240B1BE16A3700CF98C4 /* Department.swift */,
 				945E240D1BE1811400CF98C4 /* DayViewViewController.swift */,
 				945E240F1BE1818200CF98C4 /* CreateTaskViewController.swift */,
+				946800641C00C31400042597 /* DepartmentDate.swift */,
 			);
 			path = HotelApp;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */,
 				F1F9100D1BDFD39500B4814A /* CalendarViewController.swift in Sources */,
 				947AF75D1BDEE33A008CADB4 /* ViewController.swift in Sources */,
+				946800651C00C31400042597 /* DepartmentDate.swift in Sources */,
 				947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */,
 				945E240A1BE167B900CF98C4 /* Task.swift in Sources */,
 				945E24101BE1818200CF98C4 /* CreateTaskViewController.swift in Sources */,
