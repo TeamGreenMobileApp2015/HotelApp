@@ -15,6 +15,8 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var keyboardIsShown : Bool = false;
+    
     let user = PFUser.currentUser()
     
     override func viewDidLoad() {
@@ -23,7 +25,8 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
         self.usernameField.delegate = self;
         self.passwordField.delegate = self;
         
-  
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         
     }
     
@@ -58,4 +61,15 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func keyboardWillShow(sender: NSNotification) {
+        if(!keyboardIsShown){
+            self.view.frame.origin.y -= 150
+        }
+        keyboardIsShown = true;
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 150
+        keyboardIsShown = false;
+    }
 }
