@@ -28,6 +28,11 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         
+        var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        swipe.direction = UISwipeGestureRecognizerDirection.Down
+        
+        self.view.addGestureRecognizer(swipe)
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,5 +76,10 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
     func keyboardWillHide(sender: NSNotification) {
         self.view.frame.origin.y += 150
         keyboardIsShown = false;
+    }
+    
+    func dismissKeyboard() {
+        self.usernameField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
     }
 }
