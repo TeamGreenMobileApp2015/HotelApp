@@ -7,5 +7,5 @@ target 'HotelApp' do
   pod 'SwiftyJSON', '~> 2.3'
   pod 'Parse'
   pod 'SwiftMoment'
-  pod 'CalendarView', '~> 1.1'
+  pod 'CVCalendar', '~> 1.2.7'
 end

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DepartmentDate {
     
@@ -15,5 +16,7 @@ class DepartmentDate {
     var lobby = false
     var housekeeping = false
     var maintenance = false
+    
+    var colors = [UIColor]()
     
 }

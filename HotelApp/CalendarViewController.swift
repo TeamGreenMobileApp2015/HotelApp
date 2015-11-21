@@ -17,6 +17,8 @@ class CalendarViewController: UIViewController {
     var shouldShowDaysOut = false
     var animationFinished = true
     
+    var finished = 0
+    
     var selectedDay:DayView!
     
     var departments = [Department]()
@@ -26,7 +28,8 @@ class CalendarViewController: UIViewController {
     let date = NSDate()
     
     let calendar = NSCalendar.currentCalendar()
-
+    
+    var dateDepartments = [Int: DepartmentDate]()
     
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -68,20 +71,130 @@ class CalendarViewController: UIViewController {
         let lastDateOfMonth: NSDate = calendar.dateFromComponents(components)!
         
         components.month = currentMonth
+        components.timeZone = NSTimeZone(name: "UTC")
         components.day = 1
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
         
         // Loop through the entire month
         var indexedDay = calendar.dateFromComponents(components)!
+        
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        
+        var endOfIndexedDay = calendar.dateFromComponents(components)!
+        
         while indexedDay.compare(lastDateOfMonth) == NSComparisonResult.OrderedAscending {
             
-            print(calendar.dateFromComponents(components)!)
+            self.finished++
             
-            
+            self.getTasksForDay(components.day, startDate: indexedDay, endDate: endOfIndexedDay)
             
             components.day += 1
+            components.hour = 0
+            components.minute = 0
+            components.second = 0
+            
             indexedDay = calendar.dateFromComponents(components)!
+            
+            components.hour = 23
+            components.minute = 59
+            components.second = 59
+            
+            endOfIndexedDay = calendar.dateFromComponents(components)!
         }
         
+    }
+    
+    func getTasksForDay(day: Int, startDate: NSDate, endDate: NSDate) {
+        Task.query()?.whereKey("dueDate", greaterThanOrEqualTo: startDate).whereKey("dueDate", lessThanOrEqualTo: endDate).findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error != nil {
+                print("has error")
+                print(error?.description)
+                return
+            }
+            
+            let tasks = objects as! [Task]
+            
+            if tasks.count == 0 {
+                self.decrementFinished()
+                
+                return
+            } else {
+                print(day)
+                print(startDate)
+                print("date has tasks: \(tasks.count)")
+            }
+            
+            var departmentDate = DepartmentDate()
+            if (self.dateDepartments[day] != nil) {
+                departmentDate = self.dateDepartments[day]!
+            }
+            
+            var changedDepartmentDate = false
+            
+            for task in tasks {
+                
+                do {
+                    try task.department.pin()
+                } catch _ {
+                    
+                }
+                
+                let department = task.department
+                
+                if task.department.name == "Rooms" && !departmentDate.rooms {
+                    departmentDate.rooms = true
+                    
+                    changedDepartmentDate = true
+                    
+                    let color = UIColor(red: CGFloat(department.red), green: CGFloat(department.green), blue: CGFloat(department.blue), alpha: CGFloat(1))
+                    departmentDate.colors.append(color)
+                }
+                else if task.department.name == "Maintenance" && !departmentDate.maintenance {
+                    departmentDate.maintenance = true
+                    
+                    changedDepartmentDate = true
+                    
+                    let color = UIColor(red: CGFloat(department.red), green: CGFloat(department.green), blue: CGFloat(department.blue), alpha: CGFloat(1))
+                    departmentDate.colors.append(color)
+                }
+                else if task.department.name == "Lobby" && !departmentDate.lobby {
+                    departmentDate.lobby = true
+                    
+                    changedDepartmentDate = true
+                    
+                    let color = UIColor(red: CGFloat(department.red), green: CGFloat(department.green), blue: CGFloat(department.blue), alpha: CGFloat(1))
+                    departmentDate.colors.append(color)
+                }
+                else if task.department.name == "Housekeeping" && !departmentDate.housekeeping {
+                    departmentDate.housekeeping = true
+                    
+                    changedDepartmentDate = true
+                    
+                    let color = UIColor(red: CGFloat(department.red), green: CGFloat(department.green), blue: CGFloat(department.blue), alpha: CGFloat(1))
+                    departmentDate.colors.append(color)
+                }
+                else if task.department.name == "Dining" && !departmentDate.dining {
+                    departmentDate.dining = true
+                    
+                    changedDepartmentDate = true
+                    
+                    let color = UIColor(red: CGFloat(department.red), green: CGFloat(department.green), blue: CGFloat(department.blue), alpha: CGFloat(1))
+                    departmentDate.colors.append(color)
+                }
+            }
+            
+            if changedDepartmentDate {
+                print("changed department date!")
+                self.dateDepartments[day] = departmentDate
+            }
+            
+            self.decrementFinished()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,6 +207,22 @@ class CalendarViewController: UIViewController {
         
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
+    }
+    
+    func decrementFinished() {
+        
+        self.finished--
+        
+        if self.finished == 0 {
+            
+            print("finished reloading calendar")
+            
+            self.calendarView.commitCalendarViewUpdate()
+            self.calendarView.reloadInputViews()
+            self.menuView.commitMenuViewUpdate()
+            self.calendarView.setNeedsDisplay()
+            self.calendarView.contentController.refreshPresentedMonth()
+        }
     }
     
 }
@@ -131,30 +260,29 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
         let day = dayView.date.day
-        let randomDay = Int(arc4random_uniform(31))
-        if day == randomDay {
-            return true
+        
+        let hasDay : Bool = self.dateDepartments[day] != nil
+        
+
+        if hasDay {
+            print("Day: \(day): \(hasDay)")
         }
         
-        return true
+        return hasDay
     }
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
         
-        let red = CGFloat(arc4random_uniform(600) / 255)
-        let green = CGFloat(arc4random_uniform(600) / 255)
-        let blue = CGFloat(arc4random_uniform(600) / 255)
-        
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
-        
-        let numberOfDots = Int(arc4random_uniform(3) + 1)
-        switch(numberOfDots) {
-        case 2:
-            return [color, color]
-        case 3:
-            return [color, color, color]
-        default:
-            return [color] // return 1 dot
+        let dateDepartment = self.dateDepartments[dayView.date.day]
+    
+        if dateDepartment != nil {
+            
+            print(dayView.date.day)
+            print(dateDepartment?.colors)
+            
+            return (dateDepartment?.colors)!
+        } else {
+            return [UIColor]()
         }
     }
     
@@ -178,10 +306,20 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
     func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        if (dayView.isCurrentDay) {
-            return true
+//        if (dayView.isCurrentDay) {
+//            return true
+//        }
+//        return false
+        let day = dayView.date.day
+        
+        let hasDay : Bool = self.dateDepartments[day] != nil
+        
+        
+        if hasDay {
+            print("Day: \(day): \(hasDay)")
         }
-        return false
+        
+        return hasDay
     }
     
 }
@@ -220,4 +358,18 @@ extension CalendarViewController {
         print("Showing Month: \(components.month)")
     }
     
+}
+
+extension CVCalendarContentViewController {
+    public func refreshPresentedMonth() {
+        for weekV in presentedMonthView.weekViews {
+            for dayView in weekV.dayViews {
+                dayView.preliminarySetup()
+                dayView.supplementarySetup()
+                dayView.dotMarkers.removeAll()
+                dayView.reloadContent()
+                dayView.setupDotMarker()
+            }
+        }
+    }
 }

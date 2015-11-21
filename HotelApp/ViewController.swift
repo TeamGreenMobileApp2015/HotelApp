@@ -11,6 +11,7 @@ import Parse
 
 class ViewController: UIViewController {
     
+    var tasks = []
     var user = PFUser.currentUser()
     
     override func viewDidLoad() {
