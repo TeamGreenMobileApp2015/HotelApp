@@ -83,22 +83,6 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     
-    func tempAlert(alertMessage: String, sec: Double){
-        let alert = UIAlertController(title: alertMessage, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        
-        presentViewController(alert, animated: true, completion: nil)
-        
-        //dismiss alert by timer
-        let delay = sec * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            
-            alert.dismissViewControllerAnimated(false, completion: nil)
-        })
-
-    }
-    
-    
     @IBAction func CreateTaskButton(sender: AnyObject) {
         var inputCheck = true
         
@@ -129,8 +113,9 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         
         //set task department
         if let deptSelection = deptSelection {
-            newTask.department.name = deptSelection
-            print("department: \(deptSelection)")
+            newDept.name = deptSelection
+            newTask.department = newDept
+            print("department: \(newTask.department.name)")
         }
         
         //Set task due date
@@ -164,19 +149,4 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
             })
         }
     }
-    
-    //    func printAllTasks(){
-    //        if let query = Task.query(){
-    //            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-    //                if error == nil {
-    //                    if let objects = objects as? [Task]{
-    //                        for dept in objects {
-    //                            print(dept)
-    //                            print("--------------")
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
 }
