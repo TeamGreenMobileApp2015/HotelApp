@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -323,7 +324,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-vU-Inv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-Ey-Sfd">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7E1-Ey-Sfd" secondAttribute="height" multiplier="25:3" id="V59-Jk-Znc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Create Task">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dbf-db-5gk" kind="show" id="MFS-EY-y35"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-vU-Inv">
                                 <rect key="frame" x="0.0" y="312" width="375" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -357,20 +372,20 @@
                                     <outlet property="delegate" destination="Pa0-9J-Ir5" id="xf8-Sl-4WW"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-Ey-Sfd">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Create Task">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dbf-db-5gk" kind="show" id="MFS-EY-y35"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oop-1N-Wm2" firstAttribute="top" secondItem="7E1-Ey-Sfd" secondAttribute="bottom" id="0SC-6Q-ZY6"/>
+                            <constraint firstAttribute="trailing" secondItem="7E1-Ey-Sfd" secondAttribute="trailing" id="0lC-sk-vw6"/>
+                            <constraint firstItem="fmm-vU-Inv" firstAttribute="leading" secondItem="7E1-Ey-Sfd" secondAttribute="leading" id="5GH-e0-zDJ"/>
+                            <constraint firstItem="oop-1N-Wm2" firstAttribute="top" secondItem="7E1-Ey-Sfd" secondAttribute="bottom" id="5fj-QT-TzK"/>
+                            <constraint firstItem="fmm-vU-Inv" firstAttribute="top" secondItem="OzC-rQ-VPa" secondAttribute="bottom" constant="292" id="6Vy-JQ-6XK"/>
+                            <constraint firstItem="fmm-vU-Inv" firstAttribute="trailing" secondItem="7E1-Ey-Sfd" secondAttribute="trailing" id="Bc6-2c-36b"/>
+                            <constraint firstItem="7E1-Ey-Sfd" firstAttribute="top" secondItem="fmm-vU-Inv" secondAttribute="bottom" constant="-1" id="Lg5-oz-uhd"/>
+                            <constraint firstItem="7E1-Ey-Sfd" firstAttribute="leading" secondItem="4mh-ZQ-2oB" secondAttribute="leading" id="et2-hw-BMD"/>
+                            <constraint firstItem="oop-1N-Wm2" firstAttribute="top" secondItem="fmm-vU-Inv" secondAttribute="bottom" constant="44" id="njK-eQ-Afa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="taskTableView" destination="fmm-vU-Inv" id="Wcc-Ri-cCe"/>
@@ -459,7 +474,6 @@
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="CreateTaskButton:" destination="dbf-db-5gk" eventType="touchUpInside" id="vgi-9T-b5o"/>
-                                    <segue destination="7ck-Tm-dZC" kind="unwind" unwindAction="unwindWithNewTask:" id="L7l-dn-9FC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -497,7 +511,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsi-6Z-yYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="7ck-Tm-dZC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1379.5" y="1033.5"/>
         </scene>
