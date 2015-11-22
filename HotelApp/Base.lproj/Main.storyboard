@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aU2-nq-4nW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +43,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-LobbyIcon-V2.png"/>
                                 <connections>
-                                    <action selector="lobbyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydb-ZS-Jmh"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Lobby" id="MGI-VF-K0q"/>
                                 </connections>
                             </button>
@@ -56,7 +55,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-DiningIcon-V2.png"/>
                                 <connections>
-                                    <action selector="dinningClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCO-87-auh"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Dining" id="kpP-yf-WQf"/>
                                 </connections>
                             </button>
@@ -69,11 +67,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-HousekeepingIcon-V2.png"/>
                                 <connections>
-                                    <action selector="housekeepingClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pA9-0o-oGF"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
                                 <rect key="frame" x="68" y="369" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -82,11 +79,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-MaintenanceIcon-V2.png"/>
                                 <connections>
-                                    <action selector="maintenanceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydk-7b-88j"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Maintenance" id="6Qv-oW-v01"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="add department">
                                 <rect key="frame" x="242" y="369" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -95,7 +91,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-OverviewCalendarIcon.png"/>
                                 <connections>
-                                    <action selector="addDepartmentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXG-uk-HjW"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
@@ -108,7 +103,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-RoomsIcon-v2.png"/>
                                 <connections>
-                                    <action selector="roomsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpx-5O-1hS"/>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Rooms" id="XcS-X6-axL"/>
                                 </connections>
                             </button>
@@ -165,21 +159,21 @@
                                     <constraint firstAttribute="height" constant="5" id="2WY-4X-YT4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Maintenance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzr-Vf-wbR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzr-Vf-wbR">
                                 <rect key="frame" x="51" y="442" width="99" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Overview Calender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0R-xl-dkV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview Calender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0R-xl-dkV">
                                 <rect key="frame" x="201" y="442" width="145" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueLine" translatesAutoresizingMaskIntoConstraints="NO" id="qDS-1R-bPB" userLabel="BottomBlueLine">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueLine" translatesAutoresizingMaskIntoConstraints="NO" id="qDS-1R-bPB" userLabel="BottomBlueLine">
                                 <rect key="frame" x="8" y="489" width="359" height="5"/>
                                 <animations/>
                                 <constraints>
@@ -189,6 +183,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgf-S2-gFo">
                                 <rect key="frame" x="313" y="536" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="Pa0-9J-Ir5" kind="show" id="dY6-kO-L9o"/>
@@ -325,31 +320,36 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-vU-Inv">
                                 <rect key="frame" x="0.0" y="312" width="375" height="311"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayTaskCell" textLabel="SP1-i1-SXW" detailTextLabel="ndg-Wk-ERf" style="IBUITableViewCellStyleSubtitle" id="If4-8p-0zw">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="If4-8p-0zw" id="lcn-6Y-wpo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SP1-i1-SXW">
-                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ndg-Wk-ERf">
-                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -359,6 +359,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-Ey-Sfd">
                                 <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Create Task">
@@ -574,9 +575,9 @@
         <image name="Menu-RoomsIcon-v2.png" width="333" height="333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kpP-yf-WQf"/>
         <segue reference="Rgm-EW-b44"/>
-        <segue reference="Hls-Lf-0dt"/>
+        <segue reference="kpP-yf-WQf"/>
+        <segue reference="dY6-kO-L9o"/>
         <segue reference="MFS-EY-y35"/>
     </inferredMetricsTieBreakers>
 </document>
