@@ -109,24 +109,30 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         if inputCheck {
             
             //save the new task to the cloud
-            newTask.saveEventually()
-            print("Saving task")
-            
-            //display "Task saved" notification and return to previous view controller
-            let alert = UIAlertController(title: "Task added", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-            
-            presentViewController(alert, animated: true, completion: nil)
-            
-            let delay = 1.5 * Double(NSEC_PER_SEC)
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue(), {
-                
-                alert.dismissViewControllerAnimated(false, completion: nil)
-                
-                if let navController = self.navigationController {
-                    navController.popViewControllerAnimated(true)
+            newTask.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if(success) {
+                    print("Saving task")
+                    
+//                    //display "Task saved" notification and return to previous view controller
+//                    let alert = UIAlertController(title: "Task added", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+//                    
+//                    self.presentViewController(alert, animated: true, completion: nil)
+//                    
+//                    let delay = 1.5 * Double(NSEC_PER_SEC)
+//                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+//                    dispatch_after(time, dispatch_get_main_queue(), {
+//                        alert.dismissViewControllerAnimated(false, completion: nil)
+//                        
+//                        //pop to previous viewcontroller
+//                        if let navController = self.navigationController {
+//                            navController.popViewControllerAnimated(true)
+//                        }
+//                    })
+                } else {
+                    print("Error Saving \(error)")
                 }
-            })
+            }
         }
     }
     

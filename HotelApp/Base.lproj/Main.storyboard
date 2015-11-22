@@ -324,7 +324,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-vU-Inv">
-                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
+                                <rect key="frame" x="0.0" y="312" width="375" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayTaskCell" textLabel="SP1-i1-SXW" detailTextLabel="ndg-Wk-ERf" style="IBUITableViewCellStyleSubtitle" id="If4-8p-0zw">
@@ -357,6 +357,17 @@
                                     <outlet property="delegate" destination="Pa0-9J-Ir5" id="xf8-Sl-4WW"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-Ey-Sfd">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Create Task">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dbf-db-5gk" kind="show" id="MFS-EY-y35"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -448,6 +459,7 @@
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="CreateTaskButton:" destination="dbf-db-5gk" eventType="touchUpInside" id="vgi-9T-b5o"/>
+                                    <segue destination="7ck-Tm-dZC" kind="unwind" unwindAction="unwindWithNewTask:" id="L7l-dn-9FC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -485,6 +497,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsi-6Z-yYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7ck-Tm-dZC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1379.5" y="1033.5"/>
         </scene>
@@ -561,8 +574,9 @@
         <image name="Menu-RoomsIcon-v2.png" width="333" height="333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rgm-EW-b44"/>
         <segue reference="kpP-yf-WQf"/>
+        <segue reference="Rgm-EW-b44"/>
         <segue reference="Hls-Lf-0dt"/>
+        <segue reference="MFS-EY-y35"/>
     </inferredMetricsTieBreakers>
 </document>
