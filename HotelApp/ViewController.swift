@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  HotelApp
 //
-//  Created by Ryan Dawkins on 10/26/15.
-//  Copyright © 2015 Ryan Dawkins. All rights reserved.
-//
 
 import UIKit
 import Parse
@@ -16,13 +13,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         self.user = PFUser.currentUser()
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        //Tests if the user is logged in if not it will segue to the LoinViewController
         if user == nil {
             print("not logged in")
             self.performSegueWithIdentifier("loginSegue", sender: self)
@@ -30,58 +25,32 @@ class ViewController: UIViewController {
         } else {
             print("is logged in apparently")
         }
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func dinningClicked(sender: AnyObject) {
-    }
-
-    @IBAction func roomsClicked(sender: AnyObject) {
     }
     
-    @IBAction func lobbyClicked(sender: AnyObject) {
-    }
-    
-    @IBAction func housekeepingClicked(sender: AnyObject) {
-    }
-    
-    @IBAction func maintenanceClicked(sender: AnyObject) {
-    }
-    
-    @IBAction func addDepartmentClicked(sender: AnyObject) {
-    }
-    
+    //Detectes which segue was triggered(Which icon was pressed)
+    //Sets data members of the destination CalenderViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
         if let destination = segue.destinationViewController as? CalendarViewController{
-            //Detectes which segue was triggered(Which icon was pressed)
-            if(segue.identifier == "Dining") {
-                destination.title = "Dining"
-            }
-            else if(segue.identifier == "Rooms") {
-                destination.title = "Rooms"
-            }
-            else if(segue.identifier == "Lobby") {
-                destination.title = "Lobby"
-            }
-            else if(segue.identifier == "HouseKeeping") {
-                destination.title = "HouseKeeping"
-            }
-            else if(segue.identifier == "Maintenance") {
-                destination.title = "Maintenance"
-            }
-            else if(segue.identifier == "AddDepartment") {
-                destination.title = "Add Department"
+            switch(segue.identifier!){
+                case "Dining":
+                    destination.title = "Dining"
+                case "Rooms":
+                    destination.title = "Rooms"
+                case "Lobby":
+                    destination.title = "Lobby"
+                case "HouseKeeping":
+                    destination.title = "HouseKeeping"
+                case "Maintenance":
+                    destination.title = "Maintenance"
+                case "AddDepartment":
+                    destination.title = "AddDepartment"
+                default:
+                    break
             }
         }
-        
     }
-    
 }
-
-//This will handle the different functions needed for each action on the icon screen
-
