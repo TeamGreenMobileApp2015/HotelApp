@@ -16,6 +16,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
         //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
     }
     
@@ -41,9 +42,17 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         
         cell.textLabel?.text = taskList[indexPath.row].name
         
-        //I'm not sure how to pull the name of the department from the task.
-        let dept = taskList[indexPath.row].department
-        cell.detailTextLabel?.text = "Department" //dept.name
+        if let dept = selectedDept {
+            cell.detailTextLabel?.text = dept
+        } else {
+            do {
+                try taskList[indexPath.row].department.pin()
+            } catch _{
+                
+            }
+            cell.detailTextLabel?.text = taskList[indexPath.row].department.name
+        }
+        
 
         if taskList[indexPath.row].completed == true{
             cell.imageView?.image = UIImage(named: "check")
@@ -118,6 +127,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     //Loads and refreshes the view
     func LoadTasks(){
         
+        //Set beginning and end time of day for the selected date
         let calendar = NSCalendar.currentCalendar()
         var startOfDay: NSDate?
         var endOfDay: NSDate?
@@ -148,6 +158,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                     query.whereKey("department", matchesQuery: innerQuery)
                 }
                 
+                //If date has been set, filter to it
                 if let date = selectedDate {
                     if let startOfDay = startOfDay {
                         query.whereKey("dueDate", greaterThanOrEqualTo: startOfDay)
