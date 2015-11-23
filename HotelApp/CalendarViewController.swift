@@ -210,7 +210,6 @@ class CalendarViewController: UIViewController{
             self.calendarView.contentController.refreshPresentedMonth()
         }
     }
-    
 }
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate{
@@ -247,7 +246,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         let day = dayView.date.day
         
         let hasDay : Bool = self.dateDepartments[day] != nil
-        
 
         if hasDay{
             print("Day: \(day): \(hasDay)")
@@ -261,10 +259,8 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         let dateDepartment = self.dateDepartments[dayView.date.day]
     
         if dateDepartment != nil {
-            
             print(dayView.date.day)
             print(dateDepartment?.colors)
-            
             return (dateDepartment?.colors)!
         }else{
             return [UIColor]()
@@ -306,7 +302,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         
         return hasDay
     }
-    
 }
 
 extension CalendarViewController{
