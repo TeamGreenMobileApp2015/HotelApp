@@ -2,40 +2,31 @@
 //  DayViewViewController.swift
 //  HotelApp
 //
-//  Created by Ryan Dawkins on 10/28/15.
-//  Copyright © 2015 Ryan Dawkins. All rights reserved.
-//
 
 import Foundation
 import UIKit
 import Parse
 
-class DayViewViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class DayViewViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var taskTableView: UITableView!
     
     var taskList: [Task] = [Task]()
     var selectedDept: String?
     var selectedDate: NSDate?
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
-        
         //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
         //LoadTasks()
-        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        //load or refresh the view
+    override func viewWillAppear(animated: Bool){
         LoadTasks()
         self.taskTableView.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -46,8 +37,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         return taskList.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("dayTaskCell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = taskList[indexPath.row].name
@@ -56,11 +46,11 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         let dept = taskList[indexPath.row].department
         cell.detailTextLabel?.text = "Department" //dept.name
 
-        if taskList[indexPath.row].completed == true {
+        if taskList[indexPath.row].completed == true{
             cell.imageView?.image = UIImage(named: "check")
             cell.textLabel?.textColor = UIColor.grayColor()
             cell.detailTextLabel?.textColor = UIColor.grayColor()
-        } else {
+        }else{
             cell.imageView?.image = UIImage(named: "uncheck")
             cell.textLabel?.textColor = UIColor.blackColor()
             cell.detailTextLabel?.textColor = UIColor.blackColor()
@@ -70,22 +60,22 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         //change completed status when cell is selected
-        if taskList[indexPath.row].completed == true {
+        if taskList[indexPath.row].completed == true{
             taskList[indexPath.row].completed = false
-        } else {
+        }else{
             taskList[indexPath.row].completed = true
         }
 
         //Save the change to Parse
-        taskList[indexPath.row].saveInBackgroundWithBlock {
+        taskList[indexPath.row].saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
-            if(success) {
+            if(success){
                 self.LoadTasks()
                 self.taskTableView.reloadData()
-            } else {
+            }else{
                 print(error)
                 
                 //Print alert
@@ -102,7 +92,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         print("Now: \(now)")
         print("dueDate: \(dueDate)")
         
-        if now == dueDate {
+        if now == dueDate{
             print("Equal")
         } else {
             print("")
@@ -110,21 +100,21 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         print(now.compare(dueDate))
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if (editingStyle == UITableViewCellEditingStyle.Delete){
             print("delete cell")
             
             //Delete task at cell
-            taskList[indexPath.row].deleteInBackgroundWithBlock {
+            taskList[indexPath.row].deleteInBackgroundWithBlock{
                 (success: Bool, error: NSError?) -> Void in
                 if(success) {
                     self.LoadTasks()
                     self.taskTableView.reloadData()
-                } else {
+                }else{
                     print(error)
                     
                     //Print alert
@@ -138,10 +128,10 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    //Loads and refreshes the view
     func LoadTasks(){
-        if let innerQuery = Department.query() {
-            if let query = Task.query() {
-                
+        if let innerQuery = Department.query(){
+            if let query = Task.query(){
                 //if deparment has been selected, filter to it
                 if let dept = selectedDept {
                     innerQuery.whereKey("name", equalTo: dept)
