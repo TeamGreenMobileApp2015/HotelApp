@@ -2,15 +2,12 @@
 //  CreateTaskViewController.swift
 //  HotelApp
 //
-//  Created by Ryan Dawkins on 10/28/15.
-//  Copyright © 2015 Ryan Dawkins. All rights reserved.
-//
 
 import Foundation
 import UIKit
 import Parse
 
-class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var deptPicker: UIPickerView!
@@ -19,12 +16,11 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     var deptSelection: Department?
     var deptObjects: [Department] = [Department]()
 
-    
     //parse object subclasses
     var newTask = Task()
     var newDept = Department()
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         //prevent tasks due dates from being set before today
@@ -34,9 +30,8 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         loadDept()
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // The number of columns of data
@@ -59,19 +54,17 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         deptSelection = deptObjects[row]
     }
     
-    
     // MARK: Buttons
-    @IBAction func CreateTaskButton(sender: AnyObject) {
+    @IBAction func CreateTaskButton(sender: AnyObject){
         var inputCheck = true
         
         //set task name
-        if let taskName = taskNameTextField.text {
-            if taskName != "" {
+        if let taskName = taskNameTextField.text{
+            if taskName != ""{
                 newTask.name = taskName
                 print("taskName: \(taskName)")
-            } else {
+            }else{
                 //if task name is empty...
-                
                 let alert = UIAlertController(title: "You must add a task name.", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                 
                 presentViewController(alert, animated: true, completion: nil)
@@ -109,9 +102,9 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
         if inputCheck {
             
             //save the new task to the cloud
-            newTask.saveInBackgroundWithBlock {
+            newTask.saveInBackgroundWithBlock{
                 (success: Bool, error: NSError?) -> Void in
-                if(success) {
+                if(success){
                     print("Saving task")
                     
                     //display "Task saved" notification and return to previous view controller
@@ -129,17 +122,14 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                             navController.popViewControllerAnimated(true)
                         }
                     })
-                } else {
+                }else{
                     print("Error Saving \(error)")
                 }
             }
         }
     }
     
-    // MARK: Other functions
-    
     func loadDept(){
-        
         //load the department names into the picker view
         if let query = Department.query(){
             query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
@@ -152,7 +142,6 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                         
                         //set first as initial selection
                         self.deptSelection = self.deptObjects[0]
-                        
                     }
                 }
             }
