@@ -48,6 +48,8 @@ class ViewController: UIViewController {
                     destination.title = "Maintenance"
                 case "AddDepartment":
                     destination.title = "AddDepartment"
+                case "logout":
+                    PFUser.logOut()
                 default:
                     break
             }
