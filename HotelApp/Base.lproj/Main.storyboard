@@ -184,7 +184,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgf-S2-gFo">
                                 <rect key="frame" x="164" y="545" width="46" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Pa0-9J-Ir5" kind="show" id="dY6-kO-L9o"/>
                                 </connections>
@@ -238,7 +240,9 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="ggk-ac-ruo" kind="show" identifier="logout" id="IFd-2J-gYY"/>
                                 </connections>
@@ -679,4 +683,5 @@
         <segue reference="kpP-yf-WQf"/>
         <segue reference="MFS-EY-y35"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
 </document>
