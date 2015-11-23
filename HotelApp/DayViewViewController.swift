@@ -22,8 +22,15 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
-        LoadTasks()
+        //LoadTasks()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        //load or refresh the view
+        LoadTasks()
+        self.taskTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,7 +52,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         
         cell.textLabel?.text = taskList[indexPath.row].name
         
-        //Trying to display the department name as a subtitle, but it keeps crashing on me
+        //I'm not sure how to pull the name of the department from the task.
         let dept = taskList[indexPath.row].department
         cell.detailTextLabel?.text = "Department" //dept.name
 
@@ -63,7 +70,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    //selecting rows - This isn't working and I'm not sure why.
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         //change completed status when cell is selected
@@ -90,6 +96,18 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
+        let now = NSDate()
+        let dueDate = taskList[indexPath.row].dueDate
+
+        print("Now: \(now)")
+        print("dueDate: \(dueDate)")
+        
+        if now == dueDate {
+            print("Equal")
+        } else {
+            print("")
+        }
+        print(now.compare(dueDate))
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -119,14 +137,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-
-    //I'm trying to get this to load changes when returning from creating a task
-    @IBAction func unwindWithNewTask(segue:UIStoryboardSegue) {
-        if let sourceVC = segue.sourceViewController as? CreateTaskViewController {
-            self.LoadTasks()
-            self.taskTableView.reloadData()
-        }
-    }
     
     func LoadTasks(){
         if let innerQuery = Department.query() {
@@ -154,6 +164,4 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-    
-    
 }
