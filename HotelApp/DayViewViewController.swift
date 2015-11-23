@@ -17,7 +17,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad(){
         super.viewDidLoad()
         //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
-        //LoadTasks()
     }
     
     override func viewWillAppear(animated: Bool){
@@ -86,18 +85,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
-        let now = NSDate()
-        let dueDate = taskList[indexPath.row].dueDate
-
-        print("Now: \(now)")
-        print("dueDate: \(dueDate)")
-        
-        if now == dueDate{
-            print("Equal")
-        } else {
-            print("")
-        }
-        print(now.compare(dueDate))
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
@@ -130,19 +117,46 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     
     //Loads and refreshes the view
     func LoadTasks(){
-        if let innerQuery = Department.query(){
-            if let query = Task.query(){
+        
+        let calendar = NSCalendar.currentCalendar()
+        var startOfDay: NSDate?
+        var endOfDay: NSDate?
+        
+        if let date = selectedDate {
+            let unitFlags: NSCalendarUnit = [.Second, .Minute, .Hour, .Day, .Month, .Year]
+            let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
+            
+            components.hour = 0
+            components.minute = 0
+            components.second = 0
+            
+            startOfDay = calendar.dateFromComponents(components)!
+            
+            components.hour = 23
+            components.minute = 59
+            components.second = 59
+            
+            endOfDay = calendar.dateFromComponents(components)!
+        }
+        
+        if let innerQuery = Department.query() {
+            if let query = Task.query() {
+                
                 //if deparment has been selected, filter to it
                 if let dept = selectedDept {
                     innerQuery.whereKey("name", equalTo: dept)
                     query.whereKey("department", matchesQuery: innerQuery)
                 }
-                /*
-                //The Task subclass dueDate doesn't seem to be matching up. It may have to do with it having the time as well as date.
+                
                 if let date = selectedDate {
-                    query.whereKey("dueDate", equalTo: date)
+                    if let startOfDay = startOfDay {
+                        query.whereKey("dueDate", greaterThanOrEqualTo: startOfDay)
+                    }
+                    if let endOfDay = endOfDay {
+                        query.whereKey("dueDate", lessThanOrEqualTo: endOfDay)
+                    }
                 }
-                */
+
                 query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
                     if error == nil {
                         if let objects = objects as? [Task] {
