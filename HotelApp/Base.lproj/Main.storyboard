@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="lobby">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-ok-KJs" userLabel="Lobby">
                                 <rect key="frame" x="69" y="254" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -46,7 +46,7 @@
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Lobby" id="MGI-VF-K0q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="dining">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-Yk-AgV" userLabel="Dining">
                                 <rect key="frame" x="241" y="98" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -58,7 +58,7 @@
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Dining" id="kpP-yf-WQf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="housekeeping">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="Housekeeping">
                                 <rect key="frame" x="242" y="254" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -70,7 +70,7 @@
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="maintainance">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="Maintainance">
                                 <rect key="frame" x="68" y="413" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
@@ -94,7 +94,7 @@
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="rooms">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="Rooms">
                                 <rect key="frame" x="69" y="98" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
