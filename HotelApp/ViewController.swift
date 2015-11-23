@@ -10,10 +10,21 @@ class ViewController: UIViewController {
     
     var tasks = []
     var user = PFUser.currentUser()
+    var departments = [String: Department]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = PFUser.currentUser()
+        
+        do {
+            let objects = try Department.query()?.findObjects()
+            let depts = objects as! [Department]
+            for d in depts {
+                self.departments[d.name] = d
+            }
+        } catch _ {
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,6 +46,11 @@ class ViewController: UIViewController {
     //Sets data members of the destination CalenderViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
         if let destination = segue.destinationViewController as? CalendarViewController{
+
+            print(segue.identifier)
+            
+            destination.department = self.departments[segue.identifier!]
+            
             switch(segue.identifier!){
                 case "Dining":
                     destination.title = "Dining"
@@ -42,12 +58,12 @@ class ViewController: UIViewController {
                     destination.title = "Rooms"
                 case "Lobby":
                     destination.title = "Lobby"
-                case "HouseKeeping":
-                    destination.title = "HouseKeeping"
+                case "Housekeeping":
+                    destination.title = "Housekeeping"
                 case "Maintenance":
                     destination.title = "Maintenance"
-                case "AddDepartment":
-                    destination.title = "AddDepartment"
+                case "Overview":
+                    destination.title = "Overview"
                 case "logout":
                     PFUser.logOut()
                 default:

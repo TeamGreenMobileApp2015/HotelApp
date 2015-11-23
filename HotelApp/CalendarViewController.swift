@@ -40,7 +40,6 @@ class CalendarViewController: UIViewController{
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             self.departments = objects as! [Department]
-            print("got departments")
             self.loadDateBoxesByDepartment()
         }
     }
@@ -55,7 +54,6 @@ class CalendarViewController: UIViewController{
         components.day = 1
         components.year = 2015
         let firstDateOfMonth: NSDate = calendar.dateFromComponents(components)!
-        print(firstDateOfMonth)
         
         components.month  += 1
         
@@ -119,9 +117,6 @@ class CalendarViewController: UIViewController{
                 
                 return
             }else{
-                print(day)
-                print(startDate)
-                print("date has tasks: \(tasks.count)")
             }
             
             var departmentDate = DepartmentDate()
@@ -183,7 +178,6 @@ class CalendarViewController: UIViewController{
             }
             
             if changedDepartmentDate{
-                print("changed department date!")
                 self.dateDepartments[day] = departmentDate
             }
             self.decrementFinished()
@@ -201,8 +195,6 @@ class CalendarViewController: UIViewController{
         self.finished--
         
         if self.finished == 0{
-            print("finished reloading calendar")
-            
             self.calendarView.commitCalendarViewUpdate()
             self.calendarView.reloadInputViews()
             self.menuView.commitMenuViewUpdate()
@@ -248,7 +240,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         let hasDay : Bool = self.dateDepartments[day] != nil
 
         if hasDay{
-            print("Day: \(day): \(hasDay)")
         }
         
         return hasDay
@@ -259,8 +250,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         let dateDepartment = self.dateDepartments[dayView.date.day]
     
         if dateDepartment != nil {
-            print(dayView.date.day)
-            print(dateDepartment?.colors)
             return (dateDepartment?.colors)!
         }else{
             return [UIColor]()
@@ -297,7 +286,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         
         
         if hasDay{
-            print("Day: \(day): \(hasDay)")
         }
         
         return hasDay
@@ -310,9 +298,7 @@ extension CalendarViewController{
         //let calendarManager = calendarView.manager
         let components = Manager.componentsForDate(NSDate()) // from today
         
-        print(components.month)
         components.month += offset
-        print(components.month)
         
         let resultDate = calendar.dateFromComponents(components)!
         

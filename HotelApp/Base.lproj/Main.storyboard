@@ -61,13 +61,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-5g-1BB" userLabel="Housekeeping">
                                 <rect key="frame" x="242" y="254" width="65" height="65"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="Housekeeping"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="4O6-G9-iIn"/>
                                     <constraint firstAttribute="height" constant="65" id="TwC-yy-lao"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu-HousekeepingIcon-V2.png"/>
                                 <connections>
-                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="HouseKeeping" id="jqC-RB-UCJ"/>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Housekeeping" id="jqC-RB-UCJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-hA-Qpl" userLabel="Maintainance">
@@ -80,18 +81,6 @@
                                 <state key="normal" backgroundImage="Menu-MaintenanceIcon-V2.png"/>
                                 <connections>
                                     <segue destination="hOJ-ty-3fb" kind="show" identifier="Maintenance" id="6Qv-oW-v01"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="Overview">
-                                <rect key="frame" x="242" y="413" width="65" height="65"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="8BM-uK-JIC"/>
-                                    <constraint firstAttribute="width" constant="65" id="LqI-D8-QJx"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Menu-OverviewCalendarIcon.png"/>
-                                <connections>
-                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="AddDepartment" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-sw-Fhu" userLabel="Rooms">
@@ -189,6 +178,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="Pa0-9J-Ir5" kind="show" id="dY6-kO-L9o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOQ-pm-pB0" userLabel="Overview">
+                                <rect key="frame" x="242" y="413" width="65" height="65"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8BM-uK-JIC"/>
+                                    <constraint firstAttribute="width" constant="65" id="LqI-D8-QJx"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Menu-OverviewCalendarIcon.png"/>
+                                <connections>
+                                    <segue destination="hOJ-ty-3fb" kind="show" identifier="Overview" id="Vm8-JK-cfA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -677,10 +678,10 @@
         <image name="Menu-RoomsIcon-v2.png" width="333" height="333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IFd-2J-gYY"/>
-        <segue reference="hoU-35-wXH"/>
         <segue reference="dY6-kO-L9o"/>
-        <segue reference="kpP-yf-WQf"/>
+        <segue reference="hoU-35-wXH"/>
+        <segue reference="IFd-2J-gYY"/>
+        <segue reference="Vm8-JK-cfA"/>
         <segue reference="MFS-EY-y35"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>

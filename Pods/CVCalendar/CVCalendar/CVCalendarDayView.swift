@@ -261,9 +261,9 @@ extension CVCalendarDayView {
                 let y = CGRectGetMidY(frame) + yOffset
                 let markerFrame = CGRectMake(0, 0, width, height)
                 
-                if (colors!.count > 3) {
-                    assert(false, "Only 3 dot markers allowed per day")
-                }
+//                if (colors!.count > 3) {
+//                    assert(false, "Only 3 dot markers allowed per day")
+//                }
                 
                 for (index, color) in (colors!).enumerate() {
                     var x: CGFloat = 0
