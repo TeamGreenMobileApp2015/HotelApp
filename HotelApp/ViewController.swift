@@ -54,5 +54,10 @@ class ViewController: UIViewController {
                     break
             }
         }
+        else if let _ = segue.destinationViewController as? LoginViewController{
+            PFUser.logOut()
+            user = nil
+            print("I should be logged out now")
+        }
     }
 }
