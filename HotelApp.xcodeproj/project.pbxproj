@@ -22,6 +22,8 @@
 		947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7641BDEE33A008CADB4 /* Assets.xcassets */; };
 		947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */; };
 		947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF76F1BDEF453008CADB4 /* LoginViewController.swift */; };
+		947B6CEB1C04CE4C000CDF50 /* loginbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 947B6CEA1C04CE4C000CDF50 /* loginbg.png */; };
+		947B6CED1C04CF58000CDF50 /* hilton-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 947B6CEC1C04CF58000CDF50 /* hilton-logo.png */; };
 		947E1A0D1C042E5700490C61 /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E1A0C1C042E5700490C61 /* CVDate.swift */; };
 		947E1A0F1C04300D00490C61 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E1A0E1C04300D00490C61 /* NSDate.swift */; };
 		F1D1D5081BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1D5021BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png */; };
@@ -52,6 +54,8 @@
 		947AF7671BDEE33A008CADB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		947AF7691BDEE33A008CADB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		947AF76F1BDEF453008CADB4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		947B6CEA1C04CE4C000CDF50 /* loginbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbg.png; sourceTree = "<group>"; };
+		947B6CEC1C04CF58000CDF50 /* hilton-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hilton-logo.png"; sourceTree = "<group>"; };
 		947E1A0C1C042E5700490C61 /* CVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVDate.swift; sourceTree = "<group>"; };
 		947E1A0E1C04300D00490C61 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		DFD359000926D860476055E6 /* Pods-HotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		947AF7591BDEE33A008CADB4 /* HotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				947B6CEC1C04CF58000CDF50 /* hilton-logo.png */,
+				947B6CEA1C04CE4C000CDF50 /* loginbg.png */,
 				947AF7721BDEFF34008CADB4 /* icons */,
 				947AF75A1BDEE33A008CADB4 /* AppDelegate.swift */,
 				947AF75C1BDEE33A008CADB4 /* ViewController.swift */,
@@ -212,9 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1D1D5081BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png in Resources */,
+				947B6CED1C04CF58000CDF50 /* hilton-logo.png in Resources */,
 				F1D1D50C1BFE8E0700E34095 /* Menu-MaintenanceIcon-V2.png in Resources */,
 				0BCBA7581C040A7D0053A72D /* cellback1.png in Resources */,
 				F1D1D5091BFE8E0700E34095 /* Menu-RoomsIcon-v2.png in Resources */,
+				947B6CEB1C04CE4C000CDF50 /* loginbg.png in Resources */,
 				947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */,
 				F1D1D50D1BFE8E0700E34095 /* Menu-HousekeepingIcon-V2.png in Resources */,
 				0BCBA7591C040A7D0053A72D /* cellback2.png in Resources */,
