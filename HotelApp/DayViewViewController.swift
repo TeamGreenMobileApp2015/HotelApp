@@ -20,6 +20,8 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.taskTableView.backgroundColor = UIColor(red: 0.90196078431372551, green: 0.90588235294117647, blue: 0.9137254901960784, alpha: 1.0)
+        
     }
     
     override func viewWillAppear(animated: Bool){
@@ -60,6 +62,10 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
