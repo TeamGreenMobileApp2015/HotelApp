@@ -36,13 +36,13 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             formatter.dateStyle = NSDateFormatterStyle.MediumStyle
             tempDateString = formatter.stringFromDate(date)
         } else {
-            tempDateString = "None Selected"
+            tempDateString = "No Date Selected"
         }
         
         if let dept = selectedDept{
             tempDeptString = dept
         }else{
-            tempDeptString = "None Selected"
+            tempDeptString = "Overview"
         }
         
         dateLabel.text = tempDateString
