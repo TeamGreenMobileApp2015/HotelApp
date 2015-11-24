@@ -114,6 +114,7 @@ class CalendarViewController: UIViewController{
             if error != nil{
                 print("has error")
                 print(error?.description)
+                self.decrementFinished()
                 return
             }
             
@@ -361,8 +362,6 @@ extension CalendarViewController{
     @IBAction func loadPrevious(sender: AnyObject) {
         self.selectedDay = nil
         self.date = self.date.previousMonth()
-        print("next date")
-        print(date)
         self.dateDepartments = [Int: DepartmentDate]()
         self.loadDateBoxesByDepartment()
         calendarView.loadPreviousView()
