@@ -40,8 +40,12 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
     //If the login data matches a record then it will segue to the menu
     @IBAction func onLoginClicked(sender: AnyObject){
         
-        let username = self.usernameField.text
+        var username = self.usernameField.text
         let password = self.passwordField.text
+        
+        if let name = username {
+            username = name.lowercaseString
+        }
         
         PFUser.logInWithUsernameInBackground(username!, password:password!){
             (user: PFUser?, error: NSError?) -> Void in
