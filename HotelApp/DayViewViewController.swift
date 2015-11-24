@@ -156,6 +156,8 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: Segues
+
+    
     //Unwind segue
     @IBAction func unwindWithNewTaskDate(segue:UIStoryboardSegue) {
         if let sourceVC = segue.sourceViewController as? CreateTaskViewController {
@@ -199,7 +201,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                 }
                 
                 //If date has been set, filter to it
-                if let date = selectedDate {
+                if let _ = selectedDate {
                     if let startOfDay = startOfDay {
                         query.whereKey("dueDate", greaterThanOrEqualTo: startOfDay)
                     }
