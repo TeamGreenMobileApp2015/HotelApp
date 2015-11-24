@@ -316,17 +316,17 @@
                                     <action selector="loadNext:" destination="hOJ-ty-3fb" eventType="touchUpInside" id="f9r-0Y-g8I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-oK-FRj">
-                                <rect key="frame" x="170" y="117" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-A8-h64">
+                                <rect key="frame" x="74" y="93" width="227" height="32"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-A8-h64">
-                                <rect key="frame" x="150" y="93" width="75" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-oK-FRj">
+                                <rect key="frame" x="74" y="117" width="227" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -349,7 +349,9 @@
                     <connections>
                         <outlet property="calendarView" destination="m0W-0E-Rrt" id="Mh3-0E-mSs"/>
                         <outlet property="menuView" destination="fPO-YF-KPA" id="qeh-Ih-21n"/>
+                        <outlet property="monthLabel" destination="6hg-A8-h64" id="brq-3b-Fn4"/>
                         <outlet property="navigationBar" destination="Iea-LE-z4Q" id="yi5-fm-ame"/>
+                        <outlet property="yearLabel" destination="Yte-oK-FRj" id="nbd-dl-AhP"/>
                         <segue destination="Pa0-9J-Ir5" kind="showDetail" identifier="showDayView" id="Hls-Lf-0dt"/>
                         <segue destination="Pa0-9J-Ir5" kind="show" identifier="toDayView" id="BQC-QI-fvK"/>
                     </connections>
