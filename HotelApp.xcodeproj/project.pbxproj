@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BCBA7581C040A7D0053A72D /* cellback1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCBA7561C040A7D0053A72D /* cellback1.png */; };
+		0BCBA7591C040A7D0053A72D /* cellback2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCBA7571C040A7D0053A72D /* cellback2.png */; };
 		6D9CC3DE22773AF90F780E2E /* Pods_HotelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941C27613445FF0D063412A2 /* Pods_HotelApp.framework */; };
 		945E240A1BE167B900CF98C4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E24091BE167B900CF98C4 /* Task.swift */; };
 		945E240C1BE16A3700CF98C4 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E240B1BE16A3700CF98C4 /* Department.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BCBA7561C040A7D0053A72D /* cellback1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellback1.png; sourceTree = "<group>"; };
+		0BCBA7571C040A7D0053A72D /* cellback2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellback2.png; sourceTree = "<group>"; };
 		4C657AB0776E2288AF8342DA /* Pods-HotelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		941C27613445FF0D063412A2 /* Pods_HotelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		945E24091BE167B900CF98C4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		947AF7721BDEFF34008CADB4 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				0BCBA7561C040A7D0053A72D /* cellback1.png */,
+				0BCBA7571C040A7D0053A72D /* cellback2.png */,
 				F1D1D5021BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png */,
 				F1D1D5031BFE8E0700E34095 /* Menu-RoomsIcon-v2.png */,
 				F1D1D5041BFE8E0700E34095 /* Menu-DiningIcon-V2.png */,
@@ -201,9 +207,11 @@
 			files = (
 				F1D1D5081BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png in Resources */,
 				F1D1D50C1BFE8E0700E34095 /* Menu-MaintenanceIcon-V2.png in Resources */,
+				0BCBA7581C040A7D0053A72D /* cellback1.png in Resources */,
 				F1D1D5091BFE8E0700E34095 /* Menu-RoomsIcon-v2.png in Resources */,
 				947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */,
 				F1D1D50D1BFE8E0700E34095 /* Menu-HousekeepingIcon-V2.png in Resources */,
+				0BCBA7591C040A7D0053A72D /* cellback2.png in Resources */,
 				947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */,
 				947AF7601BDEE33A008CADB4 /* Main.storyboard in Resources */,
 				F1D1D50B1BFE8E0700E34095 /* Menu-LobbyIcon-V2.png in Resources */,
