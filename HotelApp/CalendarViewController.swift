@@ -50,18 +50,20 @@ class CalendarViewController: UIViewController{
     
     func loadDateBoxesByDepartment(){
         
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        print("called!")
+        
+        let components = date.getComponentsOfDate()
         
         let currentMonth = components.month
         
         // Getting the First and Last date of the month
         components.day = 1
-        components.year = 2015
         let firstDateOfMonth: NSDate = calendar.dateFromComponents(components)!
         
-        components.month  += 1
+        components.month += 1
         
         let lastDateOfMonth: NSDate = calendar.dateFromComponents(components)!
+        print(lastDateOfMonth)
         
         components.month = currentMonth
         components.timeZone = NSTimeZone(name: "UTC")
@@ -356,6 +358,10 @@ extension CalendarViewController{
     @IBAction func loadPrevious(sender: AnyObject) {
         self.selectedDay = nil
         self.date = self.date.previousMonth()
+        print("next date")
+        print(date)
+        self.dateDepartments = [Int: DepartmentDate]()
+        self.loadDateBoxesByDepartment()
         calendarView.loadPreviousView()
         updateLabels()
     }
@@ -363,7 +369,11 @@ extension CalendarViewController{
     @IBAction func loadNext(sender: AnyObject) {
         self.selectedDay = nil
         self.date = self.date.nextMonth()
-        calendarView.loadPreviousView()
+        print("next date")
+        print(date)
+        self.dateDepartments = [Int: DepartmentDate]()
+        self.loadDateBoxesByDepartment()
+        calendarView.loadNextView()
         updateLabels()
     }
     

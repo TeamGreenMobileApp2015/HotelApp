@@ -15,7 +15,7 @@ extension CVDate {
         
         let calendar = NSCalendar.currentCalendar()
         let date = NSDate()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        let components = date.getComponentsOfDate()
         components.day = (self.day)
         components.month = (self.month)
         components.year = (self.year)
@@ -29,7 +29,7 @@ extension CVDate {
     func previousMonth() -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let date = NSDate()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        let components = date.getComponentsOfDate()
         components.day = (self.day)
         components.month = (self.month)-1
         components.year = (self.year)
@@ -43,7 +43,7 @@ extension CVDate {
     func nextMonth() -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let date = NSDate()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        let components = date.getComponentsOfDate()
         components.day = (self.day)
         components.month = (self.month)+1
         components.year = (self.year)
