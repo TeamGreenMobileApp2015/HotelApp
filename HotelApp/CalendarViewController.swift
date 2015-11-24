@@ -104,6 +104,7 @@ class CalendarViewController: UIViewController{
         
         if self.department != nil {
             query?.whereKey("department", equalTo: self.department!)
+            query?.includeKey("department")
         }
         
         query!.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
@@ -131,11 +132,13 @@ class CalendarViewController: UIViewController{
             var changedDepartmentDate = false
             
             for task in tasks{
-                do{
-                    try task.department.pin()
-                }catch _{
-                    
-                }
+                
+//                //from Jeff: This was causing some warnings to display. I added the line a few rows above: "query?.includeKey("department")" and commented out this section.
+//                do{
+//                    try task.department.pin()
+//                }catch _{
+//                    
+//                }
                 
                 let department = task.department
                 
