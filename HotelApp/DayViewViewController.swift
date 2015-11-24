@@ -45,11 +45,11 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         if let dept = selectedDept {
             cell.detailTextLabel?.text = dept
         } else {
-            do {
-                try taskList[indexPath.row].department.pin()
-            } catch _{
-                
-            }
+//            do {
+//                try taskList[indexPath.row].department.pin()
+//            } catch _{
+//                
+//            }
             cell.detailTextLabel?.text = taskList[indexPath.row].department.name
         }
         
@@ -167,6 +167,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                         query.whereKey("dueDate", lessThanOrEqualTo: endOfDay)
                     }
                 }
+                query.includeKey("department")
 
                 query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
                     if error == nil {
