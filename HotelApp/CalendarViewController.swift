@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController{
     var departments = [Department]()
     var department : Department? = nil
     
-    let date = NSDate()
+    var date = NSDate()
     let calendar = NSCalendar.currentCalendar()
     var dateDepartments = [Int: DepartmentDate]()
     
@@ -226,6 +226,10 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
     func didSelectDayView(dayView: DayView) {
+        if self.selectedDay == nil {
+            self.selectedDay = dayView.date
+            return
+        }
         self.selectedDay = dayView.date
         performSegueWithIdentifier("toDayView", sender: self)
     }
@@ -298,7 +302,13 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 //            return true
 //        }
 //        return false
-        let day = dayView.date.day
+        
+        let day : Int
+        if dayView.date != nil {
+            day = dayView.date.day
+        } else {
+            return false
+        }
         
         let hasDay : Bool = self.dateDepartments[day] != nil
         
@@ -340,10 +350,14 @@ extension CalendarViewController{
     }
     
     @IBAction func loadPrevious(sender: AnyObject) {
+        self.selectedDay = nil
+        self.date = self.date.previousMonth()
         calendarView.loadPreviousView()
     }
     
     @IBAction func loadNext(sender: AnyObject) {
+        self.selectedDay = nil
+        self.date = self.date.nextMonth()
         calendarView.loadPreviousView()
     }
 }

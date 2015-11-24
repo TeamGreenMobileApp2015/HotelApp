@@ -22,6 +22,8 @@
 		947AF7651BDEE33A008CADB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7641BDEE33A008CADB4 /* Assets.xcassets */; };
 		947AF7681BDEE33A008CADB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947AF7661BDEE33A008CADB4 /* LaunchScreen.storyboard */; };
 		947AF7701BDEF453008CADB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947AF76F1BDEF453008CADB4 /* LoginViewController.swift */; };
+		947E1A0D1C042E5700490C61 /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E1A0C1C042E5700490C61 /* CVDate.swift */; };
+		947E1A0F1C04300D00490C61 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E1A0E1C04300D00490C61 /* NSDate.swift */; };
 		F1D1D5081BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1D5021BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png */; };
 		F1D1D5091BFE8E0700E34095 /* Menu-RoomsIcon-v2.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1D5031BFE8E0700E34095 /* Menu-RoomsIcon-v2.png */; };
 		F1D1D50A1BFE8E0700E34095 /* Menu-DiningIcon-V2.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1D5041BFE8E0700E34095 /* Menu-DiningIcon-V2.png */; };
@@ -50,6 +52,8 @@
 		947AF7671BDEE33A008CADB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		947AF7691BDEE33A008CADB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		947AF76F1BDEF453008CADB4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		947E1A0C1C042E5700490C61 /* CVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVDate.swift; sourceTree = "<group>"; };
+		947E1A0E1C04300D00490C61 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		DFD359000926D860476055E6 /* Pods-HotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelApp/Pods-HotelApp.release.xcconfig"; sourceTree = "<group>"; };
 		F1D1D5021BFE8E0700E34095 /* Menu-OverviewCalendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-OverviewCalendarIcon.png"; sourceTree = "<group>"; };
 		F1D1D5031BFE8E0700E34095 /* Menu-RoomsIcon-v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-RoomsIcon-v2.png"; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				945E240D1BE1811400CF98C4 /* DayViewViewController.swift */,
 				945E240F1BE1818200CF98C4 /* CreateTaskViewController.swift */,
 				946800641C00C31400042597 /* DepartmentDate.swift */,
+				947E1A0C1C042E5700490C61 /* CVDate.swift */,
+				947E1A0E1C04300D00490C61 /* NSDate.swift */,
 			);
 			path = HotelApp;
 			sourceTree = "<group>";
@@ -281,8 +287,10 @@
 				947AF7631BDEE33A008CADB4 /* HotelApp.xcdatamodeld in Sources */,
 				945E240A1BE167B900CF98C4 /* Task.swift in Sources */,
 				945E24101BE1818200CF98C4 /* CreateTaskViewController.swift in Sources */,
+				947E1A0D1C042E5700490C61 /* CVDate.swift in Sources */,
 				945E240C1BE16A3700CF98C4 /* Department.swift in Sources */,
 				945E240E1BE1811400CF98C4 /* DayViewViewController.swift in Sources */,
+				947E1A0F1C04300D00490C61 /* NSDate.swift in Sources */,
 				947AF75B1BDEE33A008CADB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
