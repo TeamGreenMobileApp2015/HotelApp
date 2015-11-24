@@ -10,6 +10,9 @@ import Parse
 
 class CalendarViewController: UIViewController{
 
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    
     var shouldShowDaysOut = false
     var animationFinished = true
     
@@ -29,6 +32,7 @@ class CalendarViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         getDepartments()
+        updateLabels()
     }
     
     override func didReceiveMemoryWarning() {
@@ -353,12 +357,53 @@ extension CalendarViewController{
         self.selectedDay = nil
         self.date = self.date.previousMonth()
         calendarView.loadPreviousView()
+        updateLabels()
     }
     
     @IBAction func loadNext(sender: AnyObject) {
         self.selectedDay = nil
         self.date = self.date.nextMonth()
         calendarView.loadPreviousView()
+        updateLabels()
+    }
+    
+    func updateLabels(){
+        let componentsMonth = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        let componentsYear = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: date)
+        monthLabel.text = getMonthAsString(componentsMonth.month)
+        yearLabel.text = String(componentsYear.year)
+        print(date)
+    }
+    
+    func getMonthAsString(monthInt: Int) ->String{
+        switch(monthInt){
+        case 1 :
+            return "January"
+        case 2:
+            return "February"
+        case 3:
+            return "March"
+        case 4:
+            return "April"
+        case 5:
+            return "May"
+        case 6:
+            return "June"
+        case 7:
+            return "July"
+        case 8:
+            return "August"
+        case 9:
+            return "September"
+        case 10:
+            return "October"
+        case 11:
+            return "November"
+        case 12:
+            return "December"
+        default:
+            return "Month"
+        }
     }
 }
 
