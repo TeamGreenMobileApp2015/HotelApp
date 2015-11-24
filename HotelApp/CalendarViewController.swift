@@ -14,7 +14,7 @@ class CalendarViewController: UIViewController{
     var animationFinished = true
     
     var finished = 0
-    var selectedDay:DayView!
+    var selectedDay: CVDate? = nil
     var departments = [Department]()
     var department : Department? = nil
     
@@ -225,9 +225,25 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return true // Default value is true
     }
     
-    func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool){
-        print("\(dayView.date.commonDescription) is selected!")
-        selectedDay = dayView
+    func didSelectDayView(dayView: DayView) {
+        self.selectedDay = dayView.date
+        performSegueWithIdentifier("toDayView", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationController = segue.destinationViewController as? DayViewViewController {
+            
+            let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+            components.day = (self.selectedDay?.day)!
+            components.month = (self.selectedDay?.month)!
+            components.year = (self.selectedDay?.year)!
+            components.hour = 0
+            components.minute = 0
+            components.second = 0
+            
+            destinationController.selectedDate = calendar.dateFromComponents(components)!
+            
+        }
     }
     
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool{
