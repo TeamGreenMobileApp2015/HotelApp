@@ -8,6 +8,7 @@ import UIKit
 import Parse
 
 class DayViewViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var taskTableView: UITableView!
     
     var taskList: [Task] = [Task]()
@@ -21,6 +22,27 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func viewWillAppear(animated: Bool){
+        
+        //temporary code
+        
+        var tempDateString: String
+        var tempDeptString: String
+        
+        if let date = selectedDate {
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            tempDateString = formatter.stringFromDate(date)
+        } else {
+            tempDateString = "None Selected"
+        }
+        
+        if let dept = selectedDept{
+            tempDeptString = dept
+        }else{
+            tempDeptString = "None Selected"
+        }
+        
+        tempLabel?.text = "Date: \(tempDateString); Dept: \(tempDeptString)"
         LoadTasks()
         self.taskTableView.reloadData()
     }
@@ -53,7 +75,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.text = taskList[indexPath.row].department.name
         }
         
-
         if taskList[indexPath.row].completed == true{
             cell.imageView?.image = UIImage(named: "check")
             cell.textLabel?.textColor = UIColor.grayColor()
@@ -121,6 +142,15 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
+        }
+    }
+    
+    // MARK: Segues
+    //Unwind segue
+    @IBAction func unwindWithNewTaskDate(segue:UIStoryboardSegue) {
+        if let sourceVC = segue.sourceViewController as? CreateTaskViewController {
+            selectedDate = sourceVC.datePicker.date
+            self.taskTableView.reloadData()
         }
     }
     
