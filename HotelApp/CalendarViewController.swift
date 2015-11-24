@@ -367,9 +367,11 @@ extension CalendarViewController{
     }
     
     func updateLabels(){
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
-        monthLabel.text = getMonthAsString(components.month)
-        yearLabel.text = String(components.year)
+        let componentsMonth = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
+        let componentsYear = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: date)
+        monthLabel.text = getMonthAsString(componentsMonth.month)
+        yearLabel.text = String(componentsYear.year)
+        print(date)
     }
     
     func getMonthAsString(monthInt: Int) ->String{
