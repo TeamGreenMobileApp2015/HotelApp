@@ -11,7 +11,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var taskTableView: UITableView!
     
     var taskList: [Task] = [Task]()
@@ -21,7 +20,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
     }
     
     override func viewWillAppear(animated: Bool){
@@ -172,6 +170,13 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     @IBAction func unwindWithNewTaskDate(segue:UIStoryboardSegue) {
         if let sourceVC = segue.sourceViewController as? CreateTaskViewController {
             selectedDate = sourceVC.datePicker.date
+            
+            //if the dept has changed, update the department
+            if sourceVC.deptChanged {
+                selectedDept = sourceVC.newTask.department.name
+                LoadTasks()
+            }
+            
             self.taskTableView.reloadData()
         }
     }
