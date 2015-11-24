@@ -156,7 +156,17 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: Segues
-
+    //set initial values for task creation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationController = segue.destinationViewController as? CreateTaskViewController {
+            if let date = selectedDate {
+                destinationController.initialDate = date
+            }
+            if let dept = selectedDept {
+                destinationController.initialDept = dept
+            }
+        }
+    }
     
     //Unwind segue
     @IBAction func unwindWithNewTaskDate(segue:UIStoryboardSegue) {
