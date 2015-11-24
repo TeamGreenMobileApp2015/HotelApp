@@ -11,21 +11,12 @@ import Foundation
 extension NSDate {
     
     func previousMonth() -> NSDate {
-        
-        let calendar = NSCalendar.currentCalendar()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: self)
-        components.month = components.month - 1
-        
-        return calendar.dateFromComponents(components)!
+        let cal = NSCalendar.currentCalendar()
+        return cal.dateByAddingUnit(.Month, value: -1, toDate: self, options: [])!
     }
     
     func nextMonth() -> NSDate {
-        
-        let calendar = NSCalendar.currentCalendar()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: self)
-        components.month = components.month + 1
-        
-        return calendar.dateFromComponents(components)!
+        let cal = NSCalendar.currentCalendar()
+        return cal.dateByAddingUnit(.Month, value: 1, toDate: self, options: [])!
     }
-    
 }
