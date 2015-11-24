@@ -32,6 +32,7 @@ class CalendarViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         getDepartments()
+        updateLabels()
     }
     
     override func didReceiveMemoryWarning() {
