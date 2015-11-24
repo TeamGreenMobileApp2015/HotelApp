@@ -302,7 +302,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         
         let hasDay : Bool = self.dateDepartments[day] != nil
         
-        
         if hasDay{
         }
         
@@ -338,6 +337,14 @@ extension CalendarViewController{
         let components = Manager.componentsForDate(date) // from today
         
         print("Showing Month: \(components.month)")
+    }
+    
+    @IBAction func loadPrevious(sender: AnyObject) {
+        calendarView.loadPreviousView()
+    }
+    
+    @IBAction func loadNext(sender: AnyObject) {
+        calendarView.loadPreviousView()
     }
 }
 
