@@ -17,6 +17,10 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     var initialDate: NSDate?
     var initialDept: String?
     
+    //this will be used to check if the department has changed from initialDept. If it has, the unwindsegue will carry back the change
+    var deptChanged = false
+    
+    //used by the picker view
     var deptSelection: Department?
     var deptObjects: [Department] = [Department]()
 
@@ -114,6 +118,13 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                 if(success){
                     print("Saving task")
                     
+                    //if the department selection has changed, let the DayViewVC know about it
+                    if let initialDept = self.initialDept {
+                        if initialDept != self.newTask.department.name{
+                            self.deptChanged = true
+                        }
+                    }
+                    
                     //display "Task saved" notification and return to previous view controller
                     let alert = UIAlertController(title: "Task added", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                     
@@ -123,7 +134,7 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                     let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
                     dispatch_after(time, dispatch_get_main_queue(), {
                         alert.dismissViewControllerAnimated(false, completion: nil)
-                        self.performSegueWithIdentifier("unwindWithNewtask", sender: self)
+                        self.performSegueWithIdentifier("unwindWithNewTask", sender: self)
                     })
                     
                 }else{
@@ -142,22 +153,25 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                         
                         self.deptObjects = objects
                         
+                        //reload the deptPicker
+                        self.deptPicker.reloadAllComponents()
+                        
                         //if department was selected from main menu, start deptPicker there. Else, set initial value to first item
                         if let _ = self.initialDept {
                             for index in 0..<objects.count {
                                 if objects[index].name == self.initialDept {
                                     self.deptPicker.selectRow(index, inComponent: 0, animated: false)
+                                    self.deptSelection = self.deptObjects[index]
                                 }
                             }
                             //set the initialDept to nil so it doesn't keep changing.
-                            self.initialDept = nil
+                            //self.initialDept = nil
                         } else {
                             //set to first value
                             self.deptSelection = self.deptObjects[0]
                         }
                         
-                        //reload the deptPicker
-                        self.deptPicker.reloadAllComponents()
+                        
                     }
                 }
             }

@@ -8,7 +8,9 @@ import UIKit
 import Parse
 
 class DayViewViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
-    @IBOutlet weak var tempLabel: UILabel!
+    
+    @IBOutlet weak var departmentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var taskTableView: UITableView!
     
     var taskList: [Task] = [Task]()
@@ -18,7 +20,8 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        //self.taskTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "dayTaskCell")
+        self.taskTableView.backgroundColor = UIColor(red: 0.90196078431372551, green: 0.90588235294117647, blue: 0.9137254901960784, alpha: 1.0)
+        
     }
     
     override func viewWillAppear(animated: Bool){
@@ -33,16 +36,18 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             formatter.dateStyle = NSDateFormatterStyle.MediumStyle
             tempDateString = formatter.stringFromDate(date)
         } else {
-            tempDateString = "None Selected"
+            tempDateString = "No Date Selected"
         }
         
         if let dept = selectedDept{
             tempDeptString = dept
         }else{
-            tempDeptString = "None Selected"
+            tempDeptString = "Overview"
         }
         
-        tempLabel?.text = "Date: \(tempDateString); Dept: \(tempDeptString)"
+        dateLabel.text = tempDateString
+        departmentLabel.text = tempDeptString
+        
         LoadTasks()
         self.taskTableView.reloadData()
     }
@@ -59,6 +64,10 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         return taskList.count
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("dayTaskCell", forIndexPath: indexPath) as UITableViewCell
         
@@ -67,11 +76,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         if let dept = selectedDept {
             cell.detailTextLabel?.text = dept
         } else {
-//            do {
-//                try taskList[indexPath.row].department.pin()
-//            } catch _{
-//                
-//            }
             cell.detailTextLabel?.text = taskList[indexPath.row].department.name
         }
         
@@ -172,6 +176,13 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
     @IBAction func unwindWithNewTaskDate(segue:UIStoryboardSegue) {
         if let sourceVC = segue.sourceViewController as? CreateTaskViewController {
             selectedDate = sourceVC.datePicker.date
+            
+            //if the dept has changed, update the department
+            if sourceVC.deptChanged {
+                selectedDept = sourceVC.newTask.department.name
+                LoadTasks()
+            }
+            
             self.taskTableView.reloadData()
         }
     }
@@ -188,6 +199,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             let unitFlags: NSCalendarUnit = [.Second, .Minute, .Hour, .Day, .Month, .Year]
             let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
             
+            components.timeZone = NSTimeZone(name: "UTC")
             components.hour = 0
             components.minute = 0
             components.second = 0
