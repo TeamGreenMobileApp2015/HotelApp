@@ -242,7 +242,9 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
             components.second = 0
             
             destinationController.selectedDate = calendar.dateFromComponents(components)!
-            
+            if self.department != nil {
+                destinationController.selectedDept = self.department?.name
+            }
         }
     }
     
