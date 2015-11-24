@@ -85,6 +85,16 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.textColor = UIColor.blackColor()
         }
         
+        //set cell background image
+        let imageView = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height))
+        
+        if indexPath.row % 2 == 0 {
+            imageView.image = UIImage(named: "cellback1")
+        } else {
+            imageView.image = UIImage(named: "cellback2")
+        }
+        cell.backgroundView = imageView
+        
         return cell
     }
     
