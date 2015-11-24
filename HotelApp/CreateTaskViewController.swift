@@ -17,6 +17,10 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
     var initialDate: NSDate?
     var initialDept: String?
     
+    //this will be used to check if the department has changed from initialDept. If it has, the unwindsegue will carry back the change
+    var deptChanged = false
+    
+    //used by the picker view
     var deptSelection: Department?
     var deptObjects: [Department] = [Department]()
 
@@ -113,6 +117,13 @@ class CreateTaskViewController : UIViewController, UIPickerViewDelegate, UIPicke
                 (success: Bool, error: NSError?) -> Void in
                 if(success){
                     print("Saving task")
+                    
+                    //if the department selection has changed, let the DayViewVC know about it
+                    if let initialDept = self.initialDept {
+                        if initialDept != self.newTask.department.name{
+                            self.deptChanged = true
+                        }
+                    }
                     
                     //display "Task saved" notification and return to previous view controller
                     let alert = UIAlertController(title: "Task added", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
