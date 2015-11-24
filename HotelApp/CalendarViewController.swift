@@ -363,7 +363,7 @@ extension CalendarViewController{
     @IBAction func loadNext(sender: AnyObject) {
         self.selectedDay = nil
         self.date = self.date.nextMonth()
-        calendarView.loadPreviousView()
+        calendarView.loadNextView()
         updateLabels()
     }
     
