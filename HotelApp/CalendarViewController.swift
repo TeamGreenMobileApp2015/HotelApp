@@ -96,9 +96,9 @@ class CalendarViewController: UIViewController{
     }
     
     func getTasksForDay(day: Int, startDate: NSDate, endDate: NSDate){
-        let query = Task.query()?.whereKey("dueDate", greaterThanOrEqualTo: startDate).whereKey("dueDate", lessThanOrEqualTo: endDate)
+        let query = Task.query()?.whereKey("dueDate", greaterThanOrEqualTo: startDate).whereKey("dueDate", lessThanOrEqualTo: endDate).includeKey("department")
         
-        if self.department != nil{
+        if self.department != nil {
             query?.whereKey("department", equalTo: self.department!)
         }
         
