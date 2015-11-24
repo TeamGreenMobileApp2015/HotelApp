@@ -8,7 +8,10 @@ import UIKit
 import Parse
 
 class DayViewViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
-    @IBOutlet weak var tempLabel: UILabel!
+    
+    @IBOutlet weak var departmentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     @IBOutlet weak var taskTableView: UITableView!
     
     var taskList: [Task] = [Task]()
@@ -42,7 +45,9 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             tempDeptString = "None Selected"
         }
         
-        tempLabel?.text = "Date: \(tempDateString); Dept: \(tempDeptString)"
+        dateLabel.text = tempDateString
+        departmentLabel.text = tempDeptString
+        
         LoadTasks()
         self.taskTableView.reloadData()
     }

@@ -431,10 +431,17 @@
                                     <segue destination="dbf-db-5gk" kind="show" id="MFS-EY-y35"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-Dd-ujX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Department" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-Dd-ujX">
                                 <rect key="frame" x="20" y="116" width="335" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHy-cy-OR7">
+                                <rect key="frame" x="0.0" y="320" width="375" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -455,8 +462,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="pHy-cy-OR7" id="eHV-or-U6W"/>
+                        <outlet property="departmentLabel" destination="2bn-Dd-ujX" id="AAE-Gf-5vo"/>
                         <outlet property="taskTableView" destination="fmm-vU-Inv" id="Wcc-Ri-cCe"/>
-                        <outlet property="tempLabel" destination="2bn-Dd-ujX" id="QUs-l3-ljF"/>
                         <segue destination="dbf-db-5gk" kind="show" identifier="createTaskViewController" id="3ci-xF-VUV"/>
                     </connections>
                 </viewController>
