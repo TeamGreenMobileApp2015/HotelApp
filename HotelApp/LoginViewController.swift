@@ -43,6 +43,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         var username = self.usernameField.text
         let password = self.passwordField.text
         
+        //all usernames are saved as lowercase to avoid login problems
         if let name = username {
             username = name.lowercaseString
         }
@@ -54,6 +55,18 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
                 self.performSegueWithIdentifier("loggedInSegue", sender: self)
             }else{
                 print("failed login")
+                
+                //display temporary alert "Login Failed"
+                let alert = UIAlertController(title: "Login failed", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+
+                self.presentViewController(alert, animated: true, completion: nil)
+
+                //display alert for 1.5 seconds
+                let delay = 1.5 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue(), {
+                    alert.dismissViewControllerAnimated(false, completion: nil)
+                })
             }
         }
     }

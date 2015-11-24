@@ -72,11 +72,6 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
         if let dept = selectedDept {
             cell.detailTextLabel?.text = dept
         } else {
-//            do {
-//                try taskList[indexPath.row].department.pin()
-//            } catch _{
-//                
-//            }
             cell.detailTextLabel?.text = taskList[indexPath.row].department.name
         }
         
@@ -193,6 +188,7 @@ class DayViewViewController : UIViewController, UITableViewDataSource, UITableVi
             let unitFlags: NSCalendarUnit = [.Second, .Minute, .Hour, .Day, .Month, .Year]
             let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
             
+            components.timeZone = NSTimeZone(name: "UTC")
             components.hour = 0
             components.minute = 0
             components.second = 0
